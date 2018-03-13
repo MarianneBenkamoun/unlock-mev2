@@ -22,6 +22,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem 'figaro'
+gem 'cloudinary'
+
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -33,9 +36,26 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'carrierwave'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
+gem "gmaps4rails"
+gem 'webpacker'
+gem 'omniauth-facebook'
+gem "geocoder"
+gem 'google_directions', '~> 0.1.6.2'
+gem 'activeadmin', github: 'activeadmin'
+gem 'pundit'
+gem 'money-rails'
+gem 'stripe'
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+gem 'font-awesome-rails'
+gem 'simple_form'
+gem 'webpacker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

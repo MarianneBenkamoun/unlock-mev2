@@ -1,0 +1,2 @@
+class SubservicesController < ApplicationController
+end

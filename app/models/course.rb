@@ -1,7 +1,15 @@
 class Course < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, 
+         :recoverable, :rememberable, :trackable, :validatable
+  mount_uploader :photodoor, PhotoUploader
+  mount_uploader :photoserrure, PhotoUploader
+
   has_one :locksmith, :class_name => "Profile"
   has_one :customer, :class_name => "Profile"
   belongs_to :subservice
+  has_many :sites, dependent: :destroy
   accepts_nested_attributes_for :sites, reject_if: :all_blank, allow_destroy: true
   monetize :price_cents
 
