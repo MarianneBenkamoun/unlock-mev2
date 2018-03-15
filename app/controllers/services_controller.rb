@@ -22,4 +22,22 @@ class ServicesController < ApplicationController
     #   @recipes = Recipe.all
     # end
   end
+
+  def show #exactement le meme code que dans pages#home
+    @service = Service.find(params[:id])
+
+    # @course = Course.new
+
+    # @course.sites.build
+    # if current_user && current_user.provider == "facebook"
+    #   redirect_to new_course_path
+    # elsif current_user && current_user.profile_type == "Locksmith"
+    #   current_locksmith = Locksmith.find(current_user.profile_id)
+    #   if current_locksmith.status == true
+    #     redirect_to courses_path
+    #   else
+    #     redirect_to confirmation_locksmiths_path
+    #   end
+    # end
+  end
 end

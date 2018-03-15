@@ -1,6 +1,4 @@
 class Service < ApplicationRecord
-    validates :name, presence: true
-  has_many :subservices
-
-
+    belongs_to :parent, :class_name => 'Service', optional: true
+    has_many :childrens, :class_name => 'Service', :foreign_key => 'parent_id'
 end

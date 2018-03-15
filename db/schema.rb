@@ -81,8 +81,11 @@ ActiveRecord::Schema.define(version: 20180313132813) do
     t.string "name"
     t.string "description"
     t.string "picture"
+    t.integer "price"
+    t.bigint "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["parent_id"], name: "index_services_on_parent_id"
   end
 
   create_table "sites", force: :cascade do |t|
