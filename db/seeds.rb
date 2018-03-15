@@ -115,14 +115,14 @@ Coffre_fort_petit = Service.create(
   )
 #17
 Coffre_fort_moyen = Service.create(
-   name: "Petit coffre fort",
+   name: "Moyen coffre fort",
   description: "",
   parent_id:15,
   picture: "http://res.cloudinary.com/dult7c9dw/image/upload/v1521125661/Copie_de_moyen_Coffre_fort_emp0gt.jpg",
   )
 #18
 Coffre_fort_grand = Service.create(
-  name: "Petit coffre fort",
+  name: "Grand coffre fort",
   description: "",
   parent_id:15,
   picture: "http://res.cloudinary.com/dult7c9dw/image/upload/v1521131389/Coffre_fort_ymyrbu.jpg",
