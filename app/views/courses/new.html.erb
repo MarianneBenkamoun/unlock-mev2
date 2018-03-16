@@ -1,0 +1,45 @@
+<%= simple_form_for @course do |f| %>
+
+<%= f.input :datetext, label: false,  placeholder: "Date de réservation désirée", input_html: { id: "dt"} %>
+
+<%#= f.input :datetext, label: false,  placeholder: "Date de réservation désirée", input_html: { id: "dtp"} %>
+  <%= f.fields_for :sites do |ff| %>
+    <%= ff.input :address, placeholder: "Adresse de prise en charge", label: false %>
+    <%= ff.hidden_field :type_of, value: "pick_up" %>
+
+  <% end%>
+    <%= hidden_field_tag 'service_id', @service.id %>
+
+
+
+      <%= f.submit "Estimation", class: "btn-warning" %>
+
+
+<% end %>
+
+<%= content_for :after_js do%>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBciWZJhE5vRLjrsloTnOw7y7z4CiJIARA&libraries=places"></script>
+  <%= javascript_pack_tag('autocomplete') %>
+
+  <%= javascript_pack_tag('rome') %>
+
+
+<script type="text/javascript">
+rome(dt, { time: false,  inputFormat: "DD-MM-YYYY",
+ });
+
+</script>
+
+<script type="text/javascript">
+rome(dtp, { date: false });
+</script>
+
+
+<%end%>
+
+
+
+
+
+
+

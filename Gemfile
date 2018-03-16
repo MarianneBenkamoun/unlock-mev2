@@ -24,6 +24,7 @@ gem 'webpacker'
 # gem 'therubyracer', platforms: :ruby
 gem 'figaro'
 gem 'cloudinary'
+gem "geocoder"
 
 
 # Use CoffeeScript for .coffee assets and views

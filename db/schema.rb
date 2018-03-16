@@ -41,11 +41,11 @@ ActiveRecord::Schema.define(version: 20180313132813) do
     t.string "photoserrure"
     t.string "estimate"
     t.bigint "profile_id"
-    t.bigint "subservice_id"
+    t.bigint "service_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_courses_on_profile_id"
-    t.index ["subservice_id"], name: "index_courses_on_subservice_id"
+    t.index ["service_id"], name: "index_courses_on_service_id"
   end
 
   create_table "entreprises", force: :cascade do |t|
@@ -99,19 +99,6 @@ ActiveRecord::Schema.define(version: 20180313132813) do
     t.index ["course_id"], name: "index_sites_on_course_id"
   end
 
-  create_table "subservices", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.string "picture"
-    t.string "description"
-    t.bigint "service_id"
-    t.bigint "subservice_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["service_id"], name: "index_subservices_on_service_id"
-    t.index ["subservice_id"], name: "index_subservices_on_subservice_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -134,12 +121,10 @@ ActiveRecord::Schema.define(version: 20180313132813) do
   end
 
   add_foreign_key "courses", "profiles"
-  add_foreign_key "courses", "subservices"
+  add_foreign_key "courses", "services"
   add_foreign_key "entreprises", "profiles"
   add_foreign_key "profiles", "users"
   add_foreign_key "reviews", "courses"
   add_foreign_key "reviews", "profiles"
   add_foreign_key "sites", "courses"
-  add_foreign_key "subservices", "services"
-  add_foreign_key "subservices", "subservices"
 end

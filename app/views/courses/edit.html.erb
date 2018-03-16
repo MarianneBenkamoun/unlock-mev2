@@ -1,0 +1,12 @@
+<%= simple_form_for(@course) do |f| %>
+
+    <%= f.input :photodoor %>
+  <%= f.input :photodoor_cache, as: :hidden %>
+
+    <%= f.input :photoserrure %>
+  <%= f.input :photoserrure_cache, as: :hidden %>
+    <%= hidden_field_tag 'service_id', @service.id %>
+
+
+      <%= f.button :submit %>
+    <% end %>
