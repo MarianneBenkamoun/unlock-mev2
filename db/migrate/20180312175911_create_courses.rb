@@ -12,7 +12,7 @@ class CreateCourses < ActiveRecord::Migration[5.1]
       t.string :photoserrure
       t.string :estimate
       t.references :profile, foreign_key: true
-      t.references :subservice, foreign_key: true
+      t.references :service, foreign_key: true
       t.timestamps
     end
   end

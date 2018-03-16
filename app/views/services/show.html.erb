@@ -12,7 +12,7 @@
                 </div>
               <% end%>
             <% else %>
-              <%= link_to pages_home_path(:service_id => children.id) do %>
+              <%= link_to new_course_path(:service_id => children.id) do %>
                 <div class="txt"><%=children.name.capitalize %>
                 </div>
               <% end%>

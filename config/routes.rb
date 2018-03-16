@@ -4,7 +4,8 @@ ActiveAdmin.routes(self)
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks", registrations: "users/registrations", sessions: "users/sessions"}
 root to: 'services#index'
 resources :services
-resources :subservices
+resources :courses
+
 get 'pages/home'
 
 end
