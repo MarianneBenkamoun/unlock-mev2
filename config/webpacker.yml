@@ -50,7 +50,6 @@ development:
     watch_options:
       ignored: /node_modules/
 
-
 test:
   <<: *default
   compile: true
@@ -62,7 +61,7 @@ production:
   <<: *default
 
   # Production depends on precompilation of packs prior to booting for performance.
-  compile: false
+  compile: true
 
   # Cache manifest.json for performance
   cache_manifest: true

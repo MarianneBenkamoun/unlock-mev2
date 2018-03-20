@@ -1,0 +1,15 @@
+$font-family-sans-serif:  "Open Sans", "Helvetica", "sans-serif" !important;
+$body-bg:                 white;
+$font-size-base:          16px;
+$line-height-base:        1.4;
+$headings-font-family:    "Raleway", "Helvetica", "sans-serif" !important;
+
+$brand-primary:   #469AE0;
+$brand-success:   #32B796;
+$brand-info:      lighten(#000, 33.5%);
+$brand-danger:    #EE5F5B;
+$brand-warning:   #E67E22;
+
+$border-radius-base:  2px;
+$border-radius-large: 2px;
+$border-radius-small: 2px;

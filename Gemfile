@@ -41,6 +41,15 @@ gem 'carrierwave'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+gem 'pundit'
+gem 'money-rails'
+gem 'stripe'
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+gem 'font-awesome-rails'
+gem 'material_design_icons'
+
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 gem "gmaps4rails"
@@ -57,6 +66,10 @@ gem 'sidekiq-failures', '~> 1.0'
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'webpacker'
+gem 'pry-byebug'
+gem 'pry-rails'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

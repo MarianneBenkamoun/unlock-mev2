@@ -5,10 +5,14 @@
     "@rails/webpacker": "^3.3.1",
     "bootstrap": "^4.0.0",
     "exports-loader": "^0.7.0",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.1"
+    "popper.js": "^1.14.1",
+    "postcss": "^6.0.20"
   },
   "devDependencies": {
+    "css-loader": "^0.28.11",
+    "postcss-loader": "^2.1.2",
     "webpack-dev-server": "^3.1.1"
   }
 }

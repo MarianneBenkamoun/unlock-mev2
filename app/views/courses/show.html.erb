@@ -1,1 +1,25 @@
-pouet2
+
+<h2 class='course-item-section'>Votre course</h2>
+<div>
+  prix : <%= humanized_money_with_symbol(@course.price) %>
+</div>
+Photo de la porte : <%=image_tag @course.photodoor, class:"card"%>
+Photo de la serrure : <%=image_tag @course.photoserrure, class:"card" %>
+<!-- les services choisis par le client-->
+<div>
+  <i class='fa fa-ambulance'>
+  <% @course.service.parents.each do |parent|%>
+    <%= parent.name%>
+  <%end%>,
+  <%= @course.service.parent.name%>,<%=@course.service.name%>
+  </i>
+</div>
+<div>
+  <i class='mdi mdi-clock-fast'><%=@course.datetext%></i>
+</div>
+<div>
+  <i class='mdi mdi-flag-outline'><%= @course.sites.select { |site| site.type_of == "pick_up" }.first.address %></i>
+</div>
+
+<%= link_to "Sign up", new_user_registration_path+ "?customer=true"%>
+

@@ -7,6 +7,19 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-import 'bootstrap';
+
+
+var $ = require('jquery');
+window.jQuery = $;
+window.$ = $;
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.css';
+
+import 'src/application.css';
+import 'images/partenaires.png';
+
+
+
 console.log('Hello World from Webpacker')

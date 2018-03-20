@@ -1,0 +1,59 @@
+<nav class="navbar navbar-unlockme navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <%=image_tag 'unlockme.png', class:"logo unlockme", alt:"logo unlockme"%>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <!-- utilisateur enregistré & professionnel -->
+      <li>
+        <% if user_signed_in? %>
+          <% if current_user.profile_type=="locksmith"%>
+            <%= link_to locksmith_path(Locksmith.find_by(user_id:current_user.id)) do %>
+            <li>
+              <i class="fa fa-user"></i>
+              <%= t ".profile", default: "Profile" %>
+            </li>
+          <% end %>
+        </li>
+        <!-- utilisateur enregistré & client -->
+      <% else %>
+        <%= link_to customer_path(Customer.find_by(user_id:current_user.id)) do %>
+        <li>
+          <i class="fa fa-user"></i>
+          <%= t ".profile", default: "Profile" %>
+        </li>
+      <% end %>
+    <% end %>
+    <li>
+      <%= link_to root_path do %>
+      <i class="fa fa-home"></i>
+      <%= t ".profile", default: "Home" %>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+    <i class="fa fa-sign-out"></i>
+    <%= t ".sign_out", default: "Log out" %>
+  <% end %>
+</li>
+<% else %>
+<!-- user non enregistré -->
+<li class="nav-item active">
+  <%= link_to root_path, class: "nav-link" do %>
+  <i class="fa fa-home"></i>
+<% end %>
+</li>
+
+<li class="nav-item">
+<%= link_to t("new_user_session_path", default: "Professionnel"), new_user_session_path + "?professionel=true",class: "nav-link" %>
+</li>
+<li class="nav-item">
+<%= link_to t("new_user_session_path", default: "Client"),new_user_session_path+ "?client=true",class: "nav-link" %>
+</li>
+</ul>
+<% end %>
+</div>
+</nav>
