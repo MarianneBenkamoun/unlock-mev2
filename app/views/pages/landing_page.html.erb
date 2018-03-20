@@ -1,0 +1,107 @@
+<div id="main" class="container-fluid">
+
+  <div id="home-page">
+    <div class="row">
+      <div class="col text-center">
+        <a class="main-btn effect" href="#">CHOISIR UNE INTERVENTION</a>
+      </div>
+    </div>
+    <div class="row row-main-text">
+      <div class="col text-center main-text">
+        <h1>Réservez les meilleurs serruriers !</h1>
+      </div>
+    </div>
+  </div>
+
+  <div id="sections">
+
+    <div class="row title-section">
+      <div class="col text-center">
+        <h2>Nos domaines d'expertise</h2>
+      </div>
+    </div>
+
+    <div class="container-box">
+      <div class="box box-1">
+        <div class="box-inner">
+          <div class="content-box text-center">
+            <h5>Ouverture de porte</h5>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
+            <a href=""><span>Demande</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="box box-2">
+        <div class="box-inner">
+          <div class="content-box text-center">
+            <h5>Installation de serrure</h5>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
+            <a href=""><span>Demande</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="box box-3">
+        <div class="box-inner">
+          <div class="content-box text-center">
+            <h5>Installation de porte</h5>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
+            <a href=""<span>Demande</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-box container-box-2">
+      <div class="box box-4">
+        <div class="box-inner">
+          <div class="content-box text-center">
+            <h5>Double de clef</h5>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
+            <a href=""><span>Demande</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="box box-5">
+        <div class="box-inner">
+          <div class="content-box text-center">
+            <h5>Installation de coffre-fort</h5>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
+            <a href=""><span>Demande</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="partenaires">
+    <div class="row title-section">
+      <div class="col text-center">
+        <h2>Nos serruriers sont certifiés par :</h2>
+     <%= image_tag asset_pack_path('images/partenaires.png') %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+
+  $(document).ready(function () {
+
+    var height = $(window).height();
+    var scrollHeight = height;
+
+    $('.main-btn').click(function () {
+      $('body,html').animate({
+        scrollTop: scrollHeight
+      }, 1400);
+    });
+
+  });
+</script>

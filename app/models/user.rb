@@ -3,10 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # :confirmable, :lockable, :timeoutable and :omniauthable
     has_one :profile
-     validates_format_of :phone_number, :with => /\A^06\d{8}$|^07\d{8}$\Z/i,:message => "Entrez votre numero au format 06XXXXXXXX", :on => :update
+     validates_format_of :phone_number, :with => /\A^06\d{8}$|^07\d{8}$\Z/,:message => "Entrez votre numero au format 06XXXXXXXX", :on => :update
 
   devise :database_authenticatable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :registerable, :trackable, :validatable
 
     devise :omniauthable, omniauth_providers: [:facebook]
 

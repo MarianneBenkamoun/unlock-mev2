@@ -1,0 +1,41 @@
+.navbar-unlockme {
+  padding: 25px 200px !important;
+  border-bottom: 1px solid rgba(180,180,180,0.5) !important;
+  position: fixed !important;
+
+  .navbar-brand {
+    .logo {
+      width: 200px !important;
+    }
+  }
+
+  #navbarNav {
+    display: flex!important;
+    justify-content: flex-end !important;
+
+    .nav-item {
+      .nav-link {
+
+      }
+      .fa-home {
+        color: #203659 !important;
+        font-size: 25px !important;
+      }
+      a {
+        color: #203659;
+        padding-bottom: 0px !important;
+      }
+      &:hover {
+        a, .fa-home {
+          color: #e83d4f !important;
+        }
+      }
+    }
+
+    .nav-item.active {
+      a, .fa-home {
+        color: #e83d4f !important;
+      }
+    }
+  }
+}

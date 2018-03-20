@@ -3,7 +3,6 @@ class CoursesController < ApplicationController
     @course = Course.new
     @course.sites.build
     @service=Service.find(params[:service_id])
-
   end
 
   def create
@@ -13,7 +12,7 @@ class CoursesController < ApplicationController
     @service=Service.find(params[:service_id])
 
     @course.service=@service
-    @course.price_cents=50
+    @course.price=@service.price
     # @course.compute_infos
     # Set kms / time / price using Google API
 
@@ -43,19 +42,3 @@ class CoursesController < ApplicationController
       render :edit
     end
   end
-
-
-
-
-  private
-  def course_params
-    params.require(:course).permit(
-    :status,
-    :service_id,
-    :datetext,
-    :photoserrure,
-    :photodoor,
-    sites_attributes: [ :address, :type_of ],
-    )
-  end
-end
