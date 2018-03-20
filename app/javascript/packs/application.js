@@ -19,6 +19,7 @@ import 'font-awesome/css/font-awesome.css';
 
 import 'src/application.css';
 import 'images/partenaires.png';
+import 'images/unlockme.png';
 
 
 
