@@ -8,6 +8,7 @@ class CreateCourses < ActiveRecord::Migration[5.1]
       t.boolean :accepted
       t.datetime :date
       t.string :datetext
+      t.string :hourtext
       t.string :photodoor
       t.string :photoserrure
       t.string :estimate

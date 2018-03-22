@@ -1,3 +1,7 @@
+
+<%#= link_to 'Demande', service_path(Service.find_by(name:"Coffre fort")) %>
+
+
 <div id="main" class="container-fluid">
 
   <div id="home-page">
@@ -18,17 +22,19 @@
     <div class="row title-section">
       <div class="col text-center">
         <h2>Nos domaines d'expertise</h2>
+        <hr class="hr-img">
       </div>
     </div>
 
-    <div class="container-box">
+    <div class="container-box container-box-1">
       <div class="box box-1">
         <div class="box-inner">
           <div class="content-box text-center">
             <h5>Ouverture de porte</h5>
             <hr>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
-            <a href=""><span>Demande</span></a>
+            <a href="">
+              <span>Demande</span></a>
           </div>
         </div>
       </div>
@@ -38,7 +44,8 @@
             <h5>Installation de serrure</h5>
             <hr>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
-            <a href=""><span>Demande</span></a>
+            <a href="">
+              <span>Demande</span></a>
           </div>
         </div>
       </div>
@@ -48,60 +55,87 @@
             <h5>Installation de porte</h5>
             <hr>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
-            <a href=""<span>Demande</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-box container-box-2">
-      <div class="box box-4">
-        <div class="box-inner">
-          <div class="content-box text-center">
-            <h5>Double de clef</h5>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
-            <a href=""><span>Demande</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="box box-5">
-        <div class="box-inner">
-          <div class="content-box text-center">
-            <h5>Installation de coffre-fort</h5>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
-            <a href=""><span>Demande</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="partenaires">
-    <div class="row title-section">
-      <div class="col text-center">
-        <h2>Nos serruriers sont certifiés par :</h2>
-     <%= image_tag asset_pack_path('images/partenaires.png') %>
+          <a href="">
+           <span>demande</span>
+        </a>
       </div>
     </div>
   </div>
 </div>
 
+<div class="container-box container-box-2">
+  <div class="box box-4">
+    <div class="box-inner">
+      <div class="content-box text-center">
+        <h5>Double de clef</h5>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
+        <a href="">
+          <span>Demande</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="box box-5">
+    <div class="box-inner">
+      <div class="content-box text-center">
+        <h5>Installation de coffre-fort</h5>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
+        <a href="">
+          <span>Demande</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
+<div id="partenaires">
+  <div class="row title-section">
+    <div class="col text-center">
+      <h2>Nos serruriers sont certifiés par :</h2>
+      <hr class="hr-img">
+       <%= image_tag asset_pack_path('images/partenaires.png'),class:"logos-partenaires", alt:"logos partenaires"%>
+       <%= image_tag asset_pack_path('images/partenaires-small.png'),class:"logos-partenaires-small", alt:"logos partenaires"%>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<footer>
+  <div class="row text-center top-footer">
+    <div class="col">
+      <a class="link-footer" href="#">
+         <%= image_tag asset_pack_path('images/unlockme.png'),class:"logo-footer", alt:"logo unlockme"%>
+      </a>
+    </div>
+    <div class="col">
+      <a href="https://www.facebook.com/unlockme.io/?hc_ref=ARS0mLAhNF0JT1jZMLjmoThZezJUodzXOOc2lgG5kacpgHmtulc95eYcMQJU7swFUvU"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+    </div>
+  </div>
+  <div class="row text-center bottom-footer">
+    <div class="col">
+      <span>Copyright © 2018 Unlockme</span>
+      <span class="separateur"> | </span>
+      <a href="">Mentions légales</a>
+      <span class="separateur"> | </span>
+      <a href="">CGV</a>
+    </div>
+  </div>
+</footer>
 
 <script>
 
-  $(document).ready(function () {
+$(document).ready(function () {
 
-    var height = $(window).height();
-    var scrollHeight = height;
+var height = $(window).height();
+var scrollHeight = height;
 
-    $('.main-btn').click(function () {
-      $('body,html').animate({
-        scrollTop: scrollHeight
-      }, 1400);
-    });
+$('.main-btn').click(function () {
+  $('body,html').animate({
+    scrollTop: scrollHeight
+  }, 1400);
+});
 
-  });
+});
 </script>

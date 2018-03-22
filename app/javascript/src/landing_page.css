@@ -1,17 +1,50 @@
+
+
+
 #main {
   margin: 0;
   padding: 0;
 }
 #main h2 {
   font-size: 40px;
-  padding: 50px 0;
+  padding-top: 50px;
+}
+#main .hr-img {
+  margin-bottom: 20px;
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  width: 50%;
+  height: 1.5em;
+}
+#main .hr-img:before {
+  content: '';
+  background: linear-gradient(to right, transparent, black, transparent);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+}
+#main .hr-img:after {
+  content: "\f084";
+  font-family: FontAwesome;
+  position: relative;
+  display: inline-block;
+  color: black;
+  padding: 0 0.6em;
+  line-height: 1.5em;
+  background-color: #efefef;
 }
 #main #home-page {
   position: relative;
   padding: 0;
   width: 100%;
   height: 92vh;
-  background: url('../images/key.jpg') no-repeat;
+  background: url("../images/key.jpg") no-repeat;
   background-size: 100% 100vh;
 }
 #main #home-page .main-btn {
@@ -21,7 +54,7 @@
   text-decoration: none;
   font-weight: bold;
   letter-spacing: 1.2px;
-  color: #e83d4f;
+  color: #e83D4F;
   background-color: rgba(255, 255, 255, 0.6);
   border: 2px solid rgba(232, 61, 79, 0.8);
   margin-top: 320px;
@@ -77,46 +110,44 @@
 }
 #main #sections {
   margin: 0;
-  padding: 0;
+  padding: 0 0 60px 0;
+}
+#main #sections .hr-img:after {
+  background-color: white;
 }
 #main #sections .container-box {
-  margin: 0 200px;
+  margin: 0;
   padding-top: 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   color: white;
 }
-#main #sections .container-box .box {
-  box-shadow: 1px 4px 10px grey;
-}
 #main #sections .container-box .box-1 {
-  background: url("../images/porte-2.png") no-repeat;
+  background: url("../images/ouverture.png") no-repeat;
   background-size: cover;
 }
 #main #sections .container-box .box-2 {
-  background: url("../images/pose_serrure.jpg") no-repeat;
+  background: url("../images/pose_serrure.png") no-repeat;
   background-size: cover;
 }
 #main #sections .container-box .box-3 {
-  background: url("../images/porte.jpg") no-repeat;
+  background: url("../images/travaux_porte.png") no-repeat;
   background-size: cover;
 }
 #main #sections .container-box .box-4 {
-  background: url("../images/double_clef.jpg") no-repeat;
+  background: url("../images/double_clef.png") no-repeat;
   background-size: cover;
 }
 #main #sections .container-box .box-5 {
-  background: url("../images/coffre.jpg") no-repeat;
+  background: url("../images/coffre_moyen.png") no-repeat;
   background-size: cover;
-}
-#main #sections .container-box-2 {
-  padding-top: 60px;
-  padding-bottom: 60px;
 }
 #main #sections .box {
   height: 350px;
   width: 350px;
-  margin: 0 2em;
+  margin: 60px 2em 0 2em;
+  box-shadow: 1px 4px 10px grey;
   background-position: center;
   background-size: cover;
   position: relative;
@@ -188,9 +219,152 @@
   transform: translateX(20%);
 }
 #main #sections .content-box a:hover {
-  background: #1b324b;
+  background: #1B324B;
 }
 #main #partenaires {
   background-color: #efefef;
   padding-bottom: 60px;
 }
+#main #partenaires .logos-partenaires {
+  margin-top: 60px;
+}
+#main #partenaires .logos-partenaires-small {
+  display: none;
+}
+
+@media (max-width: 320px) {
+  #main h2 {
+    font-size: 18px;
+  }
+  #main .hr-img {
+    margin-bottom: 0px;
+    width: 75%;
+  }
+  #main #home-page .main-btn {
+    margin-top: 230px;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 280px;
+  }
+  #main #home-page .main-text h1 {
+    font-size: 26px;
+    padding-top: 80px;
+    padding-left: 40px;
+    padding-right: 20px;
+  }
+  #main #partenaires .logos-partenaires {
+    display: none;
+  }
+  #main #partenaires .logos-partenaires-small {
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    width: 80%;
+  }
+}
+@media (max-width: 400px) {
+  #main #sections .box {
+    height: 300px;
+    width: 300px;
+    margin: 40px 0 0 0;
+  }
+}
+@media (min-width: 320.02px) and (max-width: 449.98px) {
+  #main h2 {
+    font-size: 18px;
+  }
+  #main .hr-img {
+    margin-bottom: 0px;
+    width: 75%;
+  }
+  #main #home-page .main-btn {
+    margin-top: 230px;
+  }
+  #main #home-page .main-text h1 {
+    font-size: 26px;
+    padding-top: 90px;
+    padding-left: 40px;
+    padding-right: 20px;
+  }
+  #main #sections .box {
+    margin: 40px 0 0 0;
+  }
+  #main #partenaires .logos-partenaires {
+    margin-top: 30px;
+    width: 300px;
+  }
+}
+@media (min-width: 450px) and (max-width: 575.98px) {
+  #main h2 {
+    font-size: 26px;
+  }
+  #main .hr-img {
+    margin-bottom: 0px;
+    width: 75%;
+  }
+  #main #home-page .main-btn {
+    margin-top: 260px;
+  }
+  #main #home-page .main-text h1 {
+    font-size: 30px;
+    padding-top: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  #main #sections .box {
+    margin: 40px 0 0 0;
+  }
+  #main #partenaires .logos-partenaires {
+    width: 400px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #main h2 {
+    font-size: 30px;
+  }
+  #main .hr-img {
+    margin-bottom: 0px;
+  }
+  #main #home-page .main-btn {
+    margin-top: 260px;
+  }
+  #main #home-page .main-text h1 {
+    font-size: 40px;
+    padding-top: 70px;
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+  #main #partenaires .logos-partenaires {
+    width: 500px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #main #home-page .main-btn {
+    margin-top: 260px;
+  }
+  #main #home-page .main-text h1 {
+    font-size: 40px;
+    padding-top: 80px;
+  }
+  #main #sections .box {
+    margin: 60px 1.2em 0 1.2em;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #main #home-page .main-btn {
+    margin-top: 260px;
+  }
+  #main #home-page .main-text h1 {
+    font-size: 50px;
+    padding-top: 80px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1440px) {
+  #main #home-page .main-btn {
+    margin-top: 280px;
+  }
+  #main #home-page .main-text h1 {
+    padding-top: 65px;
+  }
+}
+
