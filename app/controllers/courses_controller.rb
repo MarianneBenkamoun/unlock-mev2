@@ -42,3 +42,4 @@ class CoursesController < ApplicationController
       render :edit
     end
   end
+end

@@ -20,26 +20,12 @@
 <%= content_for :after_js do%>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBciWZJhE5vRLjrsloTnOw7y7z4CiJIARA&libraries=places"></script>
   <%= javascript_pack_tag('autocomplete') %>
-
   <%= javascript_pack_tag('rome') %>
 
-
-<script type="text/javascript">
-rome(dt, { time: false,  inputFormat: "DD-MM-YYYY",
- });
-
-</script>
-
-<script type="text/javascript">
-rome(dtp, { date: false });
-</script>
-
-
-<%end%>
+  <%= javascript_pack_tag('test') %>
 
 
 
 
 
-
-
+<% end%>

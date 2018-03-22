@@ -6,6 +6,8 @@
   background-size: contain !important;
   background-position: center;
   position: relative;
+    background: url("../images/double_clef.jpg") no-repeat;
+
 }
 .txt {
   color: white !important;

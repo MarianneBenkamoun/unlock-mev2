@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180313132813) do
     t.boolean "accepted"
     t.datetime "date"
     t.string "datetext"
+    t.string "hourtext"
     t.string "photodoor"
     t.string "photoserrure"
     t.string "estimate"

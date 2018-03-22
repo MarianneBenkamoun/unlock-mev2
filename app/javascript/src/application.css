@@ -13,7 +13,9 @@
 *= require_self
 */
 @import 'bootstrap_variables';
+@import 'footer';
 @import 'navbar';
 @import 'rome';
 @import 'services';
 @import 'landing_page';
+
