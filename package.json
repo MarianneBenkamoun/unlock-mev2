@@ -6,9 +6,11 @@
     "bootstrap": "^4.0.0",
     "exports-loader": "^0.7.0",
     "font-awesome": "^4.7.0",
+    "group-css-media-queries-loader": "^1.0.4",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.1",
-    "postcss": "^6.0.20"
+    "postcss": "^6.0.20",
+    "sass-loader": "^6.0.7"
   },
   "devDependencies": {
     "css-loader": "^0.28.11",
