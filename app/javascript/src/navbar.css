@@ -1,0 +1,54 @@
+.navbar-unlockme {
+  padding: 25px 200px !important;
+  border-bottom: 1px solid rgba(180, 180, 180, 0.5);
+}
+.navbar-unlockme .navbar-brand .logo {
+  width: 200px;
+}
+.navbar-unlockme #navbarNav {
+  justify-content: flex-end;
+}
+.navbar-unlockme #navbarNav .nav-item .fa-home {
+  color: #203659;
+  font-size: 25px;
+}
+.navbar-unlockme #navbarNav .nav-item a {
+  color: #203659;
+  padding-bottom: 0;
+}
+.navbar-unlockme #navbarNav .nav-item:hover .fa-home,
+.navbar-unlockme #navbarNav .nav-item:hover a {
+  color: #e83d4f !important;
+}
+.navbar-unlockme #navbarNav .nav-item.active .fa-home,
+.navbar-unlockme #navbarNav .nav-item.active a {
+  color: #e83d4f;
+}
+
+@media (max-width: 399.98px) {
+  .navbar-unlockme {
+    padding: 25px 20px !important;
+  }
+  .navbar-unlockme .navbar-toggler:focus {
+    outline: 0 !important;
+  }
+  .navbar-unlockme #navbarNav {
+    padding-top: 20px;
+  }
+}
+@media (min-width: 400px) and (max-width: 991.98px) {
+  .navbar-unlockme {
+    padding: 25px 50px !important;
+  }
+  .navbar-unlockme .navbar-toggler:focus {
+    outline: 0 !important;
+  }
+  .navbar-unlockme #navbarNav {
+    padding-top: 20px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar-unlockme {
+    padding: 25px 100px !important;
+  }
+}
