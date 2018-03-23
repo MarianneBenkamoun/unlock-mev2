@@ -11,25 +11,15 @@ var $ = require('jquery');
 window.jQuery = $;
 window.$ = $;
 
-import 'images/partenaires.png';
-import 'images/partenaires-small.png';
-import 'images/double_clef.png';
-import 'images/little_key.png';
-import 'images/coffre_moyen.png';
+require.context("images", true);
 
-import 'images/ouverture.png';
-import 'images/pose_serrure.png';
-import 'images/travaux_porte.png';
-import 'images/unlockme.png';
+
+import 'bootstrap/scss/bootstrap.scss';
+import 'font-awesome/scss/font-awesome.scss';
 
 
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'font-awesome/css/font-awesome.css';
-
-
-import 'src/application.css';
+import 'src/application.scss';
 
 
 
