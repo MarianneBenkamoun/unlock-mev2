@@ -128,7 +128,7 @@ Coffre_fort_moyen = Service.create(
    name: "Moyen coffre fort",
   description: "",
   parent_id:15,
-  picture: Rails.root.join("app/javascript/images/coffre_moyen.jpg").open
+  picture: Rails.root.join("app/javascript/images/coffre_moyen.png").open
   )
 #18
 Coffre_fort_grand = Service.create(

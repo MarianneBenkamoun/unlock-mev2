@@ -30,6 +30,8 @@ class PagesController < ApplicationController
   def landing_page
   end
 
+def course
+end
   private
 
   def course_params
