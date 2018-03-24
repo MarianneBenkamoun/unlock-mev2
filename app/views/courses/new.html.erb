@@ -1,31 +1,45 @@
 <%= simple_form_for @course do |f| %>
-
-<%= f.input :datetext, label: false,  placeholder: "Date de réservation désirée", input_html: { id: "dt"} %>
-
-<%#= f.input :datetext, label: false,  placeholder: "Date de réservation désirée", input_html: { id: "dtp"} %>
-  <%= f.fields_for :sites do |ff| %>
-    <%= ff.input :address, placeholder: "Adresse de prise en charge", label: false %>
-    <%= ff.hidden_field :type_of, value: "pick_up" %>
-
-  <% end%>
-    <%= hidden_field_tag 'service_id', @service.id %>
+<%= f.fields_for :sites do |ff| %>
+<%= ff.input :address, placeholder: "Adresse de prise en charge", label: false %>
+<%= ff.hidden_field :type_of, value: "pick_up" %>
+<% end%>
+<%= hidden_field_tag 'service_id', @service.id %>
+<%= f.hidden_field :status, value: "pending" %>
+<%= f.hidden_field :course, value: @course.id %>
 
 
 
-      <%= f.submit "Estimation", class: "btn-warning" %>
+<div onclick="myFunction();showFilterItem();" class="btn btn-warning">Choix d'une autre date</div>
+<div id="mydiv" class="mystyle">
+<%= f.input :datetext, label: false,  placeholder: "Date de réservation désirée", input_html: { id: "date"} %>
+<%= f.input :hourtext, label: false,  placeholder: "Date de réservation désirée", input_html: { id: "hour"} %>
+</div>
 
-
+<%= f.submit "Réserver maintenant", class: "btn btn-warning", id:"myBtn" %>
 <% end %>
 
 <%= content_for :after_js do%>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBciWZJhE5vRLjrsloTnOw7y7z4CiJIARA&libraries=places"></script>
   <%= javascript_pack_tag('autocomplete') %>
-  <%= javascript_pack_tag('rome') %>
+  <%= javascript_pack_tag('Course/rome') %>
+  <%= javascript_pack_tag('Course/datetext') %>
+  <%= javascript_pack_tag('Course/hourtext') %>
+  <script>
+    function myFunction() {
+      document.getElementById("mydiv").classList.toggle("mystyle");
+    }
+  </script>
 
-  <%= javascript_pack_tag('test') %>
-
-
-
-
-
+  <script>
+    function showFilterItem(){
+      if (document.getElementById("myBtn").value == "Réserver maintenant"
+        ) { document.getElementById("myBtn").value = "Réserver à cette date";
+    }
+  else if (document.getElementById("myBtn").value == "Réserver à cette date"
+    ) {
+    document.getElementById("myBtn").value = "Réserver maintenant";
+  document.getElementById("date").value = "";
+}
+}
+</script>
 <% end%>
