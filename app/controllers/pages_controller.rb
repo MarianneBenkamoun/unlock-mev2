@@ -27,7 +27,7 @@ class PagesController < ApplicationController
     subservices = Subservice.all
   end
 
-   def landing_page
+  def landing_page
   end
 
   private

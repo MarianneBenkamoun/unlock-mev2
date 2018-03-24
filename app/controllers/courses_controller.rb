@@ -2,15 +2,16 @@ class CoursesController < ApplicationController
   def new
     @course = Course.new
     @course.sites.build
+
     @service=Service.find(params[:service_id])
+
   end
 
   def create
-    @course = Course.create(course_params)
-    # @course.sku = "course_" + @course.id.to_s
-    @course.status = "pending"
-    @service=Service.find(params[:service_id])
+    @course = Course.new(course_params)
 
+    # @course.sku = "course_" + @course.id.to_s
+    @service=Service.find(params[:service_id])
     @course.service=@service
     @course.price=@service.price
     # @course.compute_infos
@@ -37,9 +38,18 @@ class CoursesController < ApplicationController
   def update
     @course=Course.find(params[:id])
     if @course.update(course_params)
-      redirect_to "/courses/#{@course.id}?service_id=#{Service.find(params[:service_id]).id}"
+      redirect_to course_path(@course)
     else
       render :edit
     end
+  end
+
+
+
+private
+
+
+def course_params
+    params.require(:course).permit(:datetext,:hourtext,:status,:photodoor,:photoserrure,sites_attributes: [ :address, :type_of ])
   end
 end

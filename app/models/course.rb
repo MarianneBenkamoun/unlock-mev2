@@ -4,6 +4,9 @@ class Course < ApplicationRecord
 
   mount_uploader :photodoor, PhotoUploader
   mount_uploader :photoserrure, PhotoUploader
+  validates :photodoor, presence: true, on: :update
+  validates :photoserrure, presence: true, on: :update
+
 
   has_one :locksmith, :class_name => "Profile"
   has_one :customer, :class_name => "Profile"

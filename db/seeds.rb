@@ -6,9 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?Profile.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?Course.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-
-
 #1#SERVICE 1
+
 Ouverture_porte = Service.create(
   name: "Ouverture de porte",
   description: "",
@@ -61,7 +60,7 @@ Porte_simple_porte_fermee= Service.create(name:"Porte simple",parent_id: 5, desc
 Travaux_serrure = Service.create(
   name: "Travaux sur serrure",
   description: "",
-  picture: Rails.root.join("app/javascript/images/pose_serrure.jpg").open
+  picture: Rails.root.join("app/javascript/images/pose_serrure.png").open
 )
 
 #SUBSERVICE 3
@@ -79,7 +78,7 @@ Serrure_connectee= Service.create(name:"Serrure connectée",parent_id: 8, descri
 Travaux_porte = Service.create(
   name: "Travaux porte",
   description: "",
-  picture: Rails.root.join("app/javascript/images/travaux_porte.jpg").open)
+  picture: Rails.root.join("app/javascript/images/travaux_porte.png").open)
 #SUBSUBSERVICES
 
 

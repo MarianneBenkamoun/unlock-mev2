@@ -1,11 +1,18 @@
 <% if (@course.photodoor.to_s == "" || @course.photoserrure.to_s == "") %>
   <%= simple_form_for(@course) do |f| %>
-    <%= f.input :photodoor %>
+    <%= f.input :photodoor, input_html: { id: "photodoor"} %>
     <%= f.input :photodoor_cache, as: :hidden %>
-    <%= f.input :photoserrure %>
+    <%= f.input :photoserrure, input_html: { id: "photoserrure"}%>
     <%= f.input :photoserrure_cache, as: :hidden %>
-    <%= hidden_field_tag 'service_id', @service.id %>
-    <%= f.button :submit %>
+    <%= f.button :submit, id:"myBtn" %>
   <% end %>
 <% end%>
 
+<%= content_for :after_js do%>
+
+  <script>
+
+
+
+</script>
+<% end%>
