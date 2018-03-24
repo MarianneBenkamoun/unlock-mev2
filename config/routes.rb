@@ -11,5 +11,7 @@ root to: 'pages#landing_page'#
 resources :services
 resources :courses
 get 'pages/home'
+get 'pages/course'
+
 
 end
