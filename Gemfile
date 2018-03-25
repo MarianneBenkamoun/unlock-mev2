@@ -44,7 +44,6 @@ gem 'carrierwave'
 
 gem 'pundit'
 gem 'money-rails'
-gem 'stripe'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 gem 'font-awesome-rails'

@@ -21,5 +21,8 @@ Photo de la serrure : <%=image_tag @course.photoserrure, class:"card" %>
   <i class='mdi mdi-flag-outline'><%= @course.sites.select { |site| site.type_of == "pick_up" }.first.address %></i>
 </div>
 
-<%= link_to "Sign up", new_user_registration_path+ "?customer=true"%>
-
+<% if user_signed_in? %>
+  <%= link_to "Payer", new_course_payment_path(@course)%>
+<% else%>
+  <%= link_to "Sign up", new_user_registration_path(:course => @course.id.to_s, :customer => "true")%>
+<% end%>

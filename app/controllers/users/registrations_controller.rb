@@ -9,6 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
    @user=User.new
    @profile = @user.build_profile
+   @course=Course.find(params[:course])
     if params[:customer]
       @user.profile_type = "customer"
     end
@@ -69,7 +70,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
    def after_sign_up_path_for(resource)
-  root_path
+     @course=Course.find(params[:course])
+     new_course_payment_path(@course)
+
 
     # if params[:locksmith]
     #   new_locksmith_path

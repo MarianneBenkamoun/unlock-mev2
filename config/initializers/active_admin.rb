@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Unlockmeversion2"
+  config.site_title = "Unlockme"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -54,7 +54,7 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # within the application controller.
-  config.authentication_method = :authenticate_course!
+  config.authentication_method = :authenticate_admin!
 
   # == User Authorization
   #
@@ -86,7 +86,7 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # (within the application controller) to return the currently logged in user.
-  config.current_user_method = :current_course
+  config.current_user_method = :current_user
 
   # == Logging Out
   #
@@ -98,13 +98,13 @@ ActiveAdmin.setup do |config|
   # will call the method to return the path.
   #
   # Default:
-  config.logout_link_path = :destroy_course_session_path
+  config.logout_link_path = :destroy_user_session_path
 
   # This setting changes the http method used when rendering the
   # link. For example :get, :delete, :put, etc..
   #
   # Default:
-  # config.logout_link_method = :get
+  config.logout_link_method = :delete
 
   # == Root
   #
@@ -121,18 +121,15 @@ ActiveAdmin.setup do |config|
   # You can completely disable comments:
   # config.comments = false
   #
+  # You can disable the menu item for the comments index page:
+  # config.show_comments_in_menu = false
+  #
   # You can change the name under which comments are registered:
   # config.comments_registration_name = 'AdminComment'
   #
   # You can change the order for the comments and you can change the column
-  # to be used for ordering:
+  # to be used for ordering
   # config.comments_order = 'created_at ASC'
-  #
-  # You can disable the menu item for the comments index page:
-  # config.comments_menu = false
-  #
-  # You can customize the comment menu:
-  # config.comments_menu = { parent: 'Admin', priority: 1 }
 
   # == Batch Actions
   #
@@ -145,7 +142,7 @@ ActiveAdmin.setup do |config|
   # You can add before, after and around filters to all of your
   # Active Admin resources and pages from here.
   #
-  # config.before_action :do_something_awesome
+  # config.before_filter :do_something_awesome
 
   # == Localize Date/Time Format
   #
@@ -178,13 +175,6 @@ ActiveAdmin.setup do |config|
   # resources or you can disable them globally from here.
   #
   # config.breadcrumb = false
-
-  # == Create Another Checkbox
-  #
-  # Create another checkbox is disabled by default. You can customize it for individual
-  # resources or you can enable them globally from here.
-  #
-  # config.create_another = true
 
   # == Register Stylesheets & Javascripts
   #
@@ -269,25 +259,4 @@ ActiveAdmin.setup do |config|
   # You can enable or disable them for all resources here.
   #
   # config.filters = true
-  #
-  # By default the filters include associations in a select, which means
-  # that every record will be loaded for each association.
-  # You can enabled or disable the inclusion
-  # of those filters by default here.
-  #
-  # config.include_default_association_filters = true
-
-  # == Footer
-  #
-  # By default, the footer shows the current Active Admin version. You can
-  # override the content of the footer here.
-  #
-  # config.footer = 'my custom footer text'
-
-  # == Sorting
-  #
-  # By default ActiveAdmin::OrderClause is used for sorting logic
-  # You can inherit it with own class and inject it for all resources
-  #
-  # config.order_clause = MyOrderClause
 end

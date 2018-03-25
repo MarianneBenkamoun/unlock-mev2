@@ -19,7 +19,8 @@ class CoursesController < ApplicationController
 
     if @course.save
       # redirect_to "/courses/#{@course.id}?service=#{Service.find(params[:service_id]).id}"
-      redirect_to "/courses/#{@course.id}/edit?service_id=#{Service.find(params[:service_id]).id}"
+      #redirect_to "/courses/#{@course.id}/edit?service_id=#{Service.find(params[:service_id]).id}"
+      redirect_to course_path(@course)
 
     else
       render 'new'
@@ -42,6 +43,12 @@ class CoursesController < ApplicationController
     else
       render :edit
     end
+  end
+
+    def destroy
+  @course = Course.find(params[:id])
+  @course.destroy
+  redirect_to root_path
   end
 
 
