@@ -1,129 +1,71 @@
 <%= simple_form_for @course do |f| %>
-<%= f.fields_for :sites do |ff| %>
-<%= ff.input :address, placeholder: "Adresse de prise en charge", label: false %>
-<%= ff.hidden_field :type_of, value: "pick_up" %>
-<% end%>
-<%= hidden_field_tag 'service_id', @service.id %>
-<%= f.hidden_field :status, value: "pending" %>
-<%= f.hidden_field :course, value: @course.id %>
-
-
-
-<div onclick="myFunction();showFilterItem();" class="btn btn-warning">Choix d'une autre date</div>
-<div id="mydiv" class="mystyle">
-<%= f.input :datetext, label: false,  placeholder: "Date de réservation désirée", input_html: { id: "date"} %>
-<%= f.input :hourtext, label: false,  placeholder: "Date de réservation désirée", input_html: { id: "hour"} %>
-
-</div>
-
-<input value="Réserver maintenant" class="btn btn-warning" id="myBtn" data-disable-with="Réserver maintenant">
-
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
-
-
+  <%= f.fields_for :sites do |ff| %>
+    <%= ff.input :address, placeholder: "Adresse de prise en charge", label: false, input_html: { class: "form-control is-valid"} %>
+    <%= ff.hidden_field :type_of, value: "pick_up" %>
+  <% end%>
+  <%= hidden_field_tag 'service_id', @service.id %>
+  <%= f.hidden_field :status, value: "pending" %>
+  <%= f.hidden_field :course, value: @course.id %>
+  <div onclick="myFunction();showFilterItem();" class="btn btn-warning">
+    Choix d'une autre date
+  </div>
+  <div id="mydiv" class="mystyle">
+    <%= f.input :datetext, label: false,  placeholder: "Date de réservation désirée", input_html: { id: "date"} %>
+    <%= f.input :hourtext, label: false,  placeholder: "Date de réservation désirée", input_html: { id: "hour"} %>
+  </div>
+  <input value="Réserver maintenant" class="btn btn-warning" id="myBtn" data-disable-with="Réserver maintenant">
+  </br>
+  </br>
+  </br>
     <label class="btn btn-primary">
-  Photo de votre porte !
-  <span style="display:none;">
-     <%= f.input :photodoor, input_html: { id: "photodoor"}, label:false %>
-  </span>
-</label>
-
- <label class="btn btn-primary">
-  Photo de votre serrure !
-  <span style="display:none;">
-     <%= f.input :photoserrure, input_html: { id: "photodoor"}, label:false %>
-  </span>
-</label>
-    <%= f.input :photodoor_cache, as: :hidden %>
-    <%= f.input :photoserrure_cache, as: :hidden %>
-    <%= f.button :submit, id:"", class:'btn-primary' %>
-
-
-
-
+      Photo de votre porte !
+      <span style="display:none;">
+        <%= f.input :photodoor, input_html: { id: "photodoor"}, label:false %>
+      </span>
+    </label>
+    <label class="btn btn-primary">
+      Photo de votre serrure !
+      <span style="display:none;">
+        <%= f.input :photoserrure, input_html: { id: "photodoor"}, label:false %>
+      </span>
+    </label>
+  <%= f.input :photodoor_cache, as: :hidden %>
+  <%= f.input :photoserrure_cache, as: :hidden %>
+  <%= f.button :submit,"Devis", id:"", class:'btn-primary' %>
 <% end %>
+
+
 
 <%= content_for :after_js do%>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBciWZJhE5vRLjrsloTnOw7y7z4CiJIARA&libraries=places"></script>
-  <%= javascript_pack_tag('autocomplete') %>
-  <%= javascript_pack_tag('Course/rome') %>
-  <%= javascript_pack_tag('Course/datetext') %>
-  <%= javascript_pack_tag('Course/hourtext') %>
-  <script>
-    function myFunction() {
-      document.getElementById("mydiv").classList.toggle("mystyle");
-    }
-  </script>
-
-  <script>
-    function showFilterItem(){
-      if (document.getElementById("myBtn").value == "Réserver maintenant"
-        ) { document.getElementById("myBtn").value = "Réserver à cette date";
-    }
-  else if (document.getElementById("myBtn").value == "Réserver à cette date"
-    ) {
-    document.getElementById("myBtn").value = "Réserver maintenant";
-  document.getElementById("date").value = "";
+<%= javascript_pack_tag('autocomplete') %>
+<%= javascript_pack_tag('Course/rome') %>
+<%= javascript_pack_tag('Course/datetext') %>
+<%= javascript_pack_tag('Course/hourtext') %>
+<script>
+function myFunction() {
+document.getElementById("mydiv").classList.toggle("mystyle");
+}
+</script>
+<script>
+function showFilterItem(){
+if (document.getElementById("myBtn").value == "Réserver maintenant"
+) { document.getElementById("myBtn").value = "Réserver à cette date";
+}
+else if (document.getElementById("myBtn").value == "Réserver à cette date"
+) {
+document.getElementById("myBtn").value = "Réserver maintenant";
+document.getElementById("date").value = "";
 }
 }
 </script>
-
-
 <script type="text/javascript">
-  $(document).ready(function () {
-    if ($('.help-block').length) {
-      $('html, body').animate({
-          scrollTop: $(".help-block").offset().top
-      }, 200);
-    };
-  });
+$(document).ready(function () {
+if ($('.help-block').length) {
+$('html, body').animate({
+  scrollTop: $(".help-block").offset().top
+}, 200);
+};
+});
 </script>
 <% end%>
