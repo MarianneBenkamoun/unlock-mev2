@@ -59,8 +59,12 @@ ActiveRecord::Schema.define(version: 20180313132813) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.boolean "status", default: false, null: false
+    t.boolean "status"
     t.string "photo"
+    t.string "phone_number"
+    t.string "last_name"
+    t.string "first_name"
+    t.string "profile_type"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -114,10 +118,11 @@ ActiveRecord::Schema.define(version: 20180313132813) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false, null: false
+    t.string "profile_type"
     t.string "first_name"
     t.string "last_name"
     t.string "phone_number"
-    t.string "status"
+    t.boolean "status"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

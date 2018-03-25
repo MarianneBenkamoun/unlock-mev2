@@ -3,12 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # :confirmable, :lockable, :timeoutable and :omniauthable
     has_one :profile
-     validates_format_of :phone_number, :with => /\A^06\d{8}$|^07\d{8}$\Z/,:message => "Entrez votre numero au format 06XXXXXXXX", :on => :update
+    accepts_nested_attributes_for :profile, reject_if: :all_blank, allow_destroy: true
 
   devise :database_authenticatable,
          :recoverable, :rememberable, :registerable, :trackable, :validatable
 
     devise :omniauthable, omniauth_providers: [:facebook]
+    before_create :initialize_profile
+
 
 
     def self.find_for_facebook_oauth(auth)
@@ -26,5 +28,20 @@ class User < ApplicationRecord
         last_name: auth.info.last_name,
         photo: auth.info.image)
     end
+  end
+
+
+
+  private
+
+  def initialize_profile
+    self.build_profile(
+      first_name: "marianne",
+      last_name: "benkamoun",
+      phone_number: "0670851005",
+      profile_type: "customer",
+      status: true,
+
+    )
   end
 end
