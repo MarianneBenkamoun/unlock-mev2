@@ -2,14 +2,15 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   def new
    @user=User.new
+   @profile = @user.build_profile
     if params[:customer]
-      @profile_type = "customer"
+      @user.profile_type = "customer"
     end
     super
   end
@@ -41,18 +42,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # removing all OAuth session data.
   # def cancel
   #   super
-  # end
+  # e
 
   protected
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name,:last_name,:phone_number,:profile_type])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:profile_type, :profile,profile_attributes:  [ :first_name, :last_name,:phone_number, :status]])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name,:last_name,:phone_number,:profile_type])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:profile_type,:profile,profile_attributes: [ :first_name, :last_name,:phone_number, :status]])
   end
 
   # The path used after sign up.
@@ -68,6 +69,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
    def after_sign_up_path_for(resource)
+  root_path
 
     # if params[:locksmith]
     #   new_locksmith_path
@@ -81,5 +83,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     #   end
     # end
   end
+
+
+
+
 
 end
