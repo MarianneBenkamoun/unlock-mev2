@@ -68,11 +68,23 @@
 <br />
 
 
-    <%= f.input :photodoor, input_html: { id: "photodoor"} %>
+
+    <label class="btn btn-primary">
+  Photo de votre porte !
+  <span style="display:none;">
+     <%= f.input :photodoor, input_html: { id: "photodoor"}, label:false %>
+  </span>
+</label>
+
+ <label class="btn btn-primary">
+  Photo de votre serrure !
+  <span style="display:none;">
+     <%= f.input :photoserrure, input_html: { id: "photodoor"}, label:false %>
+  </span>
+</label>
     <%= f.input :photodoor_cache, as: :hidden %>
-    <%= f.input :photoserrure, input_html: { id: "photoserrure"}%>
     <%= f.input :photoserrure_cache, as: :hidden %>
-    <%= f.button :submit, id:"" %>
+    <%= f.button :submit, id:"", class:'btn-primary' %>
 
 
 
