@@ -13,9 +13,70 @@
 <div id="mydiv" class="mystyle">
 <%= f.input :datetext, label: false,  placeholder: "Date de réservation désirée", input_html: { id: "date"} %>
 <%= f.input :hourtext, label: false,  placeholder: "Date de réservation désirée", input_html: { id: "hour"} %>
+
 </div>
 
-<%= f.submit "Réserver maintenant", class: "btn btn-warning", id:"myBtn" %>
+<input value="Réserver maintenant" class="btn btn-warning" id="myBtn" data-disable-with="Réserver maintenant">
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+    <%= f.input :photodoor, input_html: { id: "photodoor"} %>
+    <%= f.input :photodoor_cache, as: :hidden %>
+    <%= f.input :photoserrure, input_html: { id: "photoserrure"}%>
+    <%= f.input :photoserrure_cache, as: :hidden %>
+    <%= f.button :submit, id:"" %>
+
+
+
+
 <% end %>
 
 <%= content_for :after_js do%>
@@ -41,5 +102,16 @@
   document.getElementById("date").value = "";
 }
 }
+</script>
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    if ($('.help-block').length) {
+      $('html, body').animate({
+          scrollTop: $(".help-block").offset().top
+      }, 200);
+    };
+  });
 </script>
 <% end%>

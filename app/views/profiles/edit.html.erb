@@ -1,0 +1,10 @@
+<%= simple_form_for(@profile) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :first_name, placeholder: "Votre prénom" , label: "Prénom"%>
+  <%= f.input :last_name, placeholder: "Votre nom", label: "Nom"%>
+  <%=f.input :phone_number, placeholder:"Pour être contacté par le serrurier", label: "Téléphone"%>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.button :submit %>
+<% end%>
+

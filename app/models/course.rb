@@ -4,8 +4,8 @@ class Course < ApplicationRecord
 
   mount_uploader :photodoor, PhotoUploader
   mount_uploader :photoserrure, PhotoUploader
-  validates :photodoor, presence: true, on: :update
-  validates :photoserrure, presence: true, on: :update
+  validates :photodoor, presence: true
+  validates :photoserrure, presence: true
 
 
   has_one :locksmith, :class_name => "Profile"
@@ -14,6 +14,7 @@ class Course < ApplicationRecord
   has_many :sites, dependent: :destroy
   accepts_nested_attributes_for :sites, reject_if: :all_blank, allow_destroy: true
   monetize :price_cents
+
 
   # def compute_infos
 

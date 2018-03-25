@@ -1,0 +1,26 @@
+Bienvenue, <%= @profile.first_name.capitalize %> !
+
+<%=image_tag @profile.photo, class:"card"%>
+          <ul>
+          <li>
+            Prénom:
+            <%= @profile.first_name.capitalize %>
+          </li>
+          <li>
+            Nom de famille:
+            <%= @profile.last_name.capitalize %>
+          </li>
+
+          <li>
+            Email:
+            <%= current_user.email %>
+          </li>
+
+          <li>
+            Téléphone:
+            <%= @profile.phone_number %>
+          </li>
+
+          <%= link_to "Edit", edit_profile_path(@profile), class: "btn btn-warning" %>
+
+

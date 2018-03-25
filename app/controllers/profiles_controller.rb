@@ -9,27 +9,17 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @locksmith = Locksmith.new(email: current_user.email, user_id:current_user.id, first_name:current_user.first_name, last_name:current_user.last_name, phone_number:current_user.phone_number.gsub(/^0/,'33'))
 
-    @locksmith.status = false
-
-
-    @locksmith.user_id = current_user.id
-    if @locksmith.save
-      redirect_to confirmation_locksmiths_path
-    else
-      render :new
-    end
   end
 
   def edit
-    @locksmith = Locksmith.find(params[:id])
+    @profile = Profile.find(params[:format])
   end
 
   def update
-    @locksmith = Locksmith.find(params[:id])
-    if @locksmith.update(locksmith_params)
-      redirect_to locksmith_path(@locksmith)
+    @profile = Profile.find(params[:format])
+    if @profile.update(profile_params)
+      redirect_to profile_path(@profile)
     else
       render :edit
     end
@@ -46,10 +36,8 @@ class ProfilesController < ApplicationController
 
   private
 
-  def locksmith_params
-    params.require(:locksmith).permit(:first_name, :last_name, :phone_number, :mail, :status, :entreprise,:photo, :photo_cache,:licensephoto,:licensephoto_cache, maison_mere:[])
-    # params.require(:locksmith).permit(:first_name, :last_name, :phone_number, :mail,
-    #   :picture, :status )
+  def profile_params
+    params.require(:profile).permit(:first_name, :last_name, :phone_number, :status,:photo, :photo_cache)
   end
 
 end
