@@ -34,7 +34,7 @@ body {
   height: 2px;
 }
 
-#main .hr-img:after {
+/* #main .hr-img:after {
   content: "\f084";
   font-family: FontAwesome;
   position: relative;
@@ -43,7 +43,7 @@ body {
   padding: 0 0.6em;
   line-height: 1.5em;
   background-color: #efefef;
-}
+} */
 
 #main #home-page {
   position: relative;
