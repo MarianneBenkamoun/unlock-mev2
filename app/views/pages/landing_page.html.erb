@@ -1,118 +1,153 @@
-
 <%#= link_to 'Demande', service_path(Service.find_by(name:"Coffre fort")) %>
 
+  <div id="main" class="container-fluid">
 
-<div id="main" class="container-fluid">
-
-  <div id="home-page">
-    <div class="row">
-      <div class="col text-center">
-        <a class="main-btn effect" href="#">CHOISIR UNE INTERVENTION</a>
+    <div id="home-page">
+      <div class="row">
+        <div class="col text-center">
+          <a class="main-btn effect" href="#">CHOISIR UNE INTERVENTION</a>
+        </div>
       </div>
-    </div>
-    <div class="row row-main-text">
-      <div class="col text-center main-text">
-        <h1>Réservez les meilleurs serruriers !</h1>
-      </div>
-    </div>
-  </div>
-
-  <div id="sections">
-
-    <div class="row title-section">
-      <div class="col text-center">
-        <h2>Nos domaines d'expertise</h2>
-        <hr class="hr-img">
+      <div class="row row-main-text">
+        <div class="col text-center main-text">
+          <h1>Réservez les meilleurs serruriers !</h1>
+        </div>
       </div>
     </div>
 
-    <div class="container-box container-box-1">
-      <div class="box box-1">
-        <div class="box-inner">
-          <div class="content-box text-center">
-            <h5>Ouverture de porte</h5>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
-            <%= link_to 'Demande', service_path(Service.find_by(name:"Ouverture de porte")) %>
+    <div id="sections">
+
+      <div class="row title-section">
+        <div class="col text-center">
+          <h2>Nos domaines d'expertise</h2>
+          <hr class="hr-img">
+        </div>
+      </div>
+
+      <div class="container-box container-box-1">
+        <div class="box box-1">
+          <div class="box-inner">
+            <div class="content-box text-center">
+              <h5>Ouverture de porte</h5>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
+              <%= link_to 'Demande', service_path(Service.find_by(name:"Ouverture de porte")) %>
+            </div>
+          </div>
+        </div>
+        <div class="box box-2">
+          <div class="box-inner">
+            <div class="content-box text-center">
+              <h5>Installation de serrure</h5>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
+              <%= link_to 'Demande', service_path(Service.find_by(name:"Travaux sur serrure")) %>
+            </div>
+          </div>
+        </div>
+        <div class="box box-3">
+          <div class="box-inner">
+            <div class="content-box text-center">
+              <h5>Installation de porte</h5>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
+              <%= link_to 'Demande', service_path(Service.find_by(name:"Travaux porte")) %>
+            </div>
           </div>
         </div>
       </div>
-      <div class="box box-2">
-        <div class="box-inner">
-          <div class="content-box text-center">
-            <h5>Installation de serrure</h5>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
-            <%= link_to 'Demande', service_path(Service.find_by(name:"Travaux sur serrure")) %>
+
+      <div class="container-box container-box-2">
+        <div class="box box-4">
+          <div class="box-inner">
+            <div class="content-box text-center">
+              <h5>Double de clef</h5>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
+              <%= link_to 'Demande', service_path(Service.find_by(name:"Double de clefs")) %>
+            </div>
+          </div>
+        </div>
+        <div class="box box-5">
+          <div class="box-inner">
+            <div class="content-box text-center">
+              <h5>Installation de coffre-fort</h5>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
+              <%= link_to 'Demande', service_path(Service.find_by(name:"Coffre fort")) %>
+            </div>
           </div>
         </div>
       </div>
-      <div class="box box-3">
-        <div class="box-inner">
-          <div class="content-box text-center">
-            <h5>Installation de porte</h5>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
-           <%= link_to 'Demande', service_path(Service.find_by(name:"Travaux porte")) %>
+    </div>
+
+    <div id="fonctionnement" class="">
+      <div class="row">
+        <div class="col text-center">
+          <h2>Comment ça marche ?</h2>
+        </div>
+      </div>
+      <div class="row row-fonctionnement text-center justify-content-center">
+        <div class="col">
+          <div class="icon_fonctionnement">
+          <%= image_tag asset_pack_path('images/devices.png'),class:"devices", alt:"devices"%>
+          </div>
+          <div class="text-fonctionnement">
+            <p><span class="number-fonctionnement">1.</span> Je choisis mon intervention en ligne</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="icon_fonctionnement">
+            <%= image_tag asset_pack_path('images/calendar.png'),class:"calendrier", alt:"calendrier"%>
+          </div>
+          <div class="text-fonctionnement">
+            <p><span class="number-fonctionnement">2.</span> Je choisis la date et l'heure du RDV</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="icon_fonctionnement">
+            <%= image_tag asset_pack_path('images/locksmith.png'),class:"serrurier", alt:"serrurier"%>
+          </div>
+          <div class="text-fonctionnement">
+            <p><span class="number-fonctionnement">3.</span> Un serrurier proche de chez moi intervient</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<div class="container-box container-box-2">
-  <div class="box box-4">
-    <div class="box-inner">
-      <div class="content-box text-center">
-        <h5>Double de clef</h5>
-        <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
-        <%= link_to 'Demande', service_path(Service.find_by(name:"Double de clefs")) %>
+    <div id="partenaires">
+      <div class="row title-section">
+        <div class="col text-center">
+          <h2>Nos serruriers sont certifiés par :</h2>
+          <hr class="hr-img">
+
+          <%= image_tag asset_pack_path('images/partenaires.png'),class:"logos-partenaires", alt:"logo partenaires"%>
+
+          <%= image_tag asset_pack_path('images/partenaires-small.png'),class:"logos-partenaires-small", alt:"logo partenaires"%>
+        </div>
       </div>
     </div>
+
   </div>
-  <div class="box box-5">
-    <div class="box-inner">
-      <div class="content-box text-center">
-        <h5>Installation de coffre-fort</h5>
-        <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis similique id suscipit delectus laudantium doloribus excepturi natus dicta aperiam doloremque officiis, sequi sed, repellendus impedit.</p>
-        <%= link_to 'Demande', service_path(Service.find_by(name:"Coffre fort")) %>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 
-<div id="partenaires">
-  <div class="row title-section">
-    <div class="col text-center">
-      <h2>Nos serruriers sont certifiés par :</h2>
-      <hr class="hr-img">
+  <% content_for :after_js do %>
+    <script>
+      $(document).ready(function () {
 
-       <%= image_tag asset_pack_path('images/partenaires.png'),class:"logos-partenaires", alt:"logo partenaires"%>
+        var height = $(window).height();
+        var scrollHeight = height;
 
-       <%= image_tag asset_pack_path('images/partenaires-small.png'),class:"logos-partenaires-small", alt:"logo partenaires"%>
-    </div>
-  </div>
-</div>
+        $('.main-btn').click(function () {
+          $('body,html').animate({
+            scrollTop: scrollHeight
+          }, 1400);
+        });
 
-</div>
+      });
+    </script>
+  <%end%>
 
-
-
-<% content_for :after_js do %>
-<script>
-$(document).ready(function () {
-
-var height = $(window).height();
-var scrollHeight = height;
-
-$('.main-btn').click(function () {
-  $('body,html').animate({
-    scrollTop: scrollHeight
-  }, 1400);
-});
-
-});
-</script>
-<%end%>
+<!-- credit for images -->
+<!-- Devices created by Gregor Cresnar from Noun Project -->
+<!-- Calendar created by Angela Angelini from Noun Project -->
+<!-- Locksmith created by Gan Khoon Lay from Noun Project -->

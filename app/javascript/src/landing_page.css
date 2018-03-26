@@ -1,11 +1,17 @@
+body {
+  overflow-x: hidden;
+}
+
 #main {
   margin: 0;
   padding: 0;
 }
+
 #main h2 {
   font-size: 40px;
   padding-top: 50px;
 }
+
 #main .hr-img {
   margin-bottom: 20px;
   line-height: 1em;
@@ -17,6 +23,7 @@
   width: 50%;
   height: 1.5em;
 }
+
 #main .hr-img:before {
   content: '';
   background: linear-gradient(to right, transparent, black, transparent);
@@ -26,7 +33,8 @@
   width: 100%;
   height: 2px;
 }
-#main .hr-img:after {
+
+/* #main .hr-img:after {
   content: "\f084";
   font-family: FontAwesome;
   position: relative;
@@ -35,7 +43,8 @@
   padding: 0 0.6em;
   line-height: 1.5em;
   background-color: #efefef;
-}
+} */
+
 #main #home-page {
   position: relative;
   padding: 0;
@@ -44,6 +53,7 @@
   background: url("../images/key.jpg") no-repeat;
   background-size: 100% 100vh;
 }
+
 #main #home-page .main-btn {
   text-align: center;
   display: inline-block;
@@ -63,10 +73,12 @@
   border-radius: 5px;
   overflow: hidden;
 }
+
 #main #home-page .main-btn.effect {
   transition: all 0.5s;
   height: 60px;
 }
+
 #main #home-page .main-btn.effect:before {
   content: "\f084";
   font-family: FontAwesome;
@@ -85,13 +97,16 @@
   transform: scale(0, 1);
   transition: all 0.2s linear 0s;
 }
+
 #main #home-page .main-btn.effect:hover {
   text-indent: -9999px;
 }
+
 #main #home-page .main-btn.effect:hover:before {
   transform: scale(1, 1);
   text-indent: 0;
 }
+
 #main #home-page .main-text {
   position: absolute;
   bottom: 0;
@@ -100,18 +115,23 @@
   height: 200px;
   color: white;
 }
+
 #main #home-page .main-text h1 {
   font-size: 60px;
   letter-spacing: 1px;
   padding-top: 50px;
 }
+
+/* section domaines d'expertise */
 #main #sections {
   margin: 0;
   padding: 0 0 60px 0;
 }
+
 #main #sections .hr-img:after {
   background-color: white;
 }
+
 #main #sections .container-box {
   margin: 0;
   padding-top: 0;
@@ -120,26 +140,32 @@
   flex-wrap: wrap;
   color: white;
 }
+
 #main #sections .container-box .box-1 {
   background: url("../images/ouverture.png") no-repeat;
   background-size: cover;
 }
+
 #main #sections .container-box .box-2 {
   background: url("../images/pose_serrure.png") no-repeat;
   background-size: cover;
 }
+
 #main #sections .container-box .box-3 {
   background: url("../images/travaux_porte.png") no-repeat;
   background-size: cover;
 }
+
 #main #sections .container-box .box-4 {
   background: url("../images/double_clef.png") no-repeat;
   background-size: cover;
 }
+
 #main #sections .container-box .box-5 {
   background: url("../images/coffre_moyen.png") no-repeat;
   background-size: cover;
 }
+
 #main #sections .box {
   height: 350px;
   width: 350px;
@@ -149,25 +175,30 @@
   background-size: cover;
   position: relative;
 }
+
 #main #sections .box:hover .content-box {
   transform: translateY(0%);
   background: rgba(232, 61, 79, 0.8);
 }
+
 #main #sections .box:hover .content-box hr {
   width: 50%;
   transition-delay: 400ms;
 }
+
 #main #sections .box:hover .content-box p {
   opacity: 1;
   transition: all 400ms ease;
   transform: translateY(0%);
   transition-delay: 600ms;
 }
+
 #main #sections .box:hover .content-box a {
   opacity: 1;
   transform: translateX(0%);
   transition-delay: 900ms;
 }
+
 #main #sections .box-inner {
   position: absolute;
   height: 100%;
@@ -176,6 +207,7 @@
   left: 0;
   overflow: hidden;
 }
+
 #main #sections .content-box {
   background: rgba(232, 61, 79, 0.8);
   position: relative;
@@ -185,10 +217,12 @@
   transform: translateY(80%);
   transition: all 600ms ease;
 }
+
 #main #sections .content-box h5 {
   padding: 0.2em 0 0;
   margin: 0;
 }
+
 #main #sections .content-box hr {
   background: #203659;
   height: 3px;
@@ -197,12 +231,14 @@
   width: 0;
   transition: all 400ms ease;
 }
+
 #main #sections .content-box p {
   letter-spacing: 1px;
   opacity: 0;
   transition: all 900ms ease;
   transform: translateY(40%);
 }
+
 #main #sections .content-box a {
   color: white;
   display: inline-block;
@@ -215,16 +251,71 @@
   opacity: 0;
   transform: translateX(20%);
 }
+
 #main #sections .content-box a:hover {
   background: #1B324B;
 }
+
+/* section comment ça marche */
+#fonctionnement {
+  background-color: #203659;
+  color: white;
+  padding-bottom: 60px;
+}
+
+#fonctionnement .row-fonctionnement {
+  padding-top: 40px;
+}
+
+#fonctionnement .icon_fonctionnement {
+  position: relative;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  background: white;
+  border-radius: 50%;
+}
+
+#fonctionnement .devices {
+  position: absolute;
+  width: 120px;
+  top: 55px;
+  left: 45px;
+}
+
+#fonctionnement .calendrier {
+  position: absolute;
+  width: 80px;
+  top: 54px;
+  left: 58px;
+}
+
+#fonctionnement .serrurier {
+  position: absolute;
+  width: 110px;
+  top: 46px;
+  left: 46px;
+}
+
+#fonctionnement .text-fonctionnement {
+  padding-top: 30px;
+}
+
+#fonctionnement .number-fonctionnement {
+  font-weight: bold;
+  color: #E83D4F;
+}
+
+/* section logos partenaires */
 #main #partenaires {
   background-color: #efefef;
   padding-bottom: 60px;
 }
+
 #main #partenaires .logos-partenaires {
   margin-top: 60px;
 }
+
 #main #partenaires .logos-partenaires-small {
   display: none;
 }
@@ -259,6 +350,7 @@
     width: 80%;
   }
 }
+
 @media (max-width: 400px) {
   #main #sections .box {
     height: 300px;
@@ -266,6 +358,7 @@
     margin: 40px 0 0 0;
   }
 }
+
 @media (min-width: 320.02px) and (max-width: 449.98px) {
   #main h2 {
     font-size: 18px;
@@ -291,6 +384,7 @@
     width: 300px;
   }
 }
+
 @media (min-width: 450px) and (max-width: 575.98px) {
   #main h2 {
     font-size: 26px;
@@ -315,6 +409,7 @@
     width: 400px;
   }
 }
+
 @media (min-width: 576px) and (max-width: 767.98px) {
   #main h2 {
     font-size: 30px;
@@ -335,6 +430,7 @@
     width: 500px;
   }
 }
+
 @media (min-width: 768px) and (max-width: 991.98px) {
   #main #home-page .main-btn {
     margin-top: 260px;
@@ -347,6 +443,7 @@
     margin: 60px 1.2em 0 1.2em;
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199.98px) {
   #main #home-page .main-btn {
     margin-top: 260px;
@@ -356,6 +453,7 @@
     padding-top: 80px;
   }
 }
+
 @media (min-width: 1200px) and (max-width: 1440px) {
   #main #home-page .main-btn {
     margin-top: 280px;
