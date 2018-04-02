@@ -18,7 +18,7 @@ body {
   position: relative;
   outline: 0;
   border: 0;
-  color: black;
+  color: #203659;
   text-align: center;
   width: 50%;
   height: 1.5em;
@@ -26,7 +26,7 @@ body {
 
 #main .hr-img:before {
   content: '';
-  background: linear-gradient(to right, transparent, black, transparent);
+  background: linear-gradient(to right, transparent, #203659, transparent);
   position: absolute;
   left: 0;
   top: 50%;
@@ -128,6 +128,10 @@ body {
   padding: 0 0 60px 0;
 }
 
+#main #sections h2 {
+  color: #203659;
+}
+
 #main #sections .hr-img:after {
   background-color: white;
 }
@@ -142,22 +146,22 @@ body {
 }
 
 #main #sections .container-box .box-1 {
-  background: url("../images/ouverture.png") no-repeat;
+  background: url("../images/ouverture1.png") no-repeat;
   background-size: cover;
 }
 
 #main #sections .container-box .box-2 {
-  background: url("../images/pose_serrure.png") no-repeat;
+  background: url("../images/pose_serrure1.png") no-repeat;
   background-size: cover;
 }
 
 #main #sections .container-box .box-3 {
-  background: url("../images/travaux_porte.png") no-repeat;
+  background: url("../images/travaux_porte1.png") no-repeat;
   background-size: cover;
 }
 
 #main #sections .container-box .box-4 {
-  background: url("../images/double_clef.png") no-repeat;
+  background: url("../images/double_clef1.png") no-repeat;
   background-size: cover;
 }
 
@@ -310,6 +314,10 @@ body {
 #main #partenaires {
   background-color: #efefef;
   padding-bottom: 60px;
+}
+
+#main #partenaires h2 {
+  color: #203659;
 }
 
 #main #partenaires .logos-partenaires {
