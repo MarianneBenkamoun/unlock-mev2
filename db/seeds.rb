@@ -19,7 +19,7 @@ Ouverture_porte = Service.create(
 Porte_claqueee = Service.create(name:"Porte claquee",
   parent_id: 1, description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
   price:1000,
-  picture: Rails.root.join("app/javascript/images/porte_simple.jpg").open,
+  picture: Rails.root.join("app/javascript/images/porte_simple.png").open,
 )
 
 
@@ -160,4 +160,3 @@ Clef_compliquee = Service.create(
   parent_id:19,
   picture: Rails.root.join("app/javascript/images/complicated_key.jpg").open
   )
-
