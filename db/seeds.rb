@@ -41,7 +41,7 @@ Porte_simple_porte_claquee= Service.create(name:"Porte simple",parent_id: 2, des
 #5#SUBSERVICE 2
 Porte_fermee= Service.create(name:"Porte fermee a clef",parent_id: 1, description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
  price:500,
- picture: Rails.root.join("app/javascript/images/locked_door.jpg").open)
+ picture: Rails.root.join("app/javascript/images/locked_door.png").open)
 
 #SUBSUBSERVICES
 #6
