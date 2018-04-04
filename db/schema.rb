@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20180313132813) do
 
   create_table "courses", force: :cascade do |t|
     t.string "sku"
-    t.integer "price_cents"
+    t.integer "price_cents", default: 0, null: false
     t.string "status"
     t.json "payment"
     t.boolean "accepted"

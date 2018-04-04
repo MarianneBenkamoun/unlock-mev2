@@ -2,7 +2,6 @@ class CreateCourses < ActiveRecord::Migration[5.1]
   def change
     create_table :courses do |t|
       t.string :sku
-      add_monetize :courses, :price, currency: { present: false }
 
       t.integer :price_cents
       t.string :status

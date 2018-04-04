@@ -1,24 +1,19 @@
-
 <div class="container">
-  <div class="row" id="">
+  <div class="row" id="services-container">
     <% @service.childrens.each_with_index do |children,i| %>
-      <div class="col-xs-12 col-sm-2">
-        <div class="card" style="background-image: url(<%=children.picture%>);">
-          <div class="card-description">
+
+        <div class="card text-center" style="background-image: url(<%=children.picture%>);">
             <% if children.childrens != [] %>
               <%= link_to service_path(children) do %>
-                <div class="txt"><%=children.name.capitalize %>
-                </div>
+                <button class="services-button"><%=children.name.capitalize %></button>
               <% end%>
             <% else %>
               <%= link_to new_course_path(:service_id => children.id) do %>
-                <div class="txt"><%=children.name.capitalize %>
-                </div>
+                <button class="services-button"><%=children.name.capitalize %></button>
               <% end%>
             <% end%>
-          </div>
         </div>
-      </div>
+
     <% end%>
   </div>
 </div>
