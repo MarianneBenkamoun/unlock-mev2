@@ -3,13 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # :confirmable, :lockable, :timeoutable and :omniauthable
     has_one :profile, dependent: :destroy
+
+
     accepts_nested_attributes_for :profile, reject_if: :all_blank, allow_destroy: true
 
   devise :database_authenticatable,
          :recoverable, :rememberable, :registerable, :trackable, :validatable
 
     devise :omniauthable, omniauth_providers: [:facebook]
-    before_create :initialize_profile
 
 
 
@@ -34,14 +35,14 @@ class User < ApplicationRecord
 
   private
 
-  def initialize_profile
-    self.build_profile(
-      first_name: "marianne",
-      last_name: "benkamoun",
-      phone_number: "0670851005",
-      profile_type: "customer",
-      status: true,
+  # def initialize_profile
+  #   self.build_profile(
+  #     first_name: "marianne",
+  #     last_name: "benkamoun",
+  #     phone_number: "0670851005",
+  #     profile_type: "customer",
+  #     status: true,
 
-    )
-  end
+  #   )
+  # end
 end

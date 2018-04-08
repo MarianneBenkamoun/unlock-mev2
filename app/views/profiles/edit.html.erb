@@ -5,6 +5,14 @@
   <%=f.input :phone_number, placeholder:"Pour être contacté par le serrurier", label: "Téléphone"%>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
+
+      <%= f.label "Maisons meres" %><br />
+  <%= f.collection_check_boxes :maisonmere_ids, Maisonmere.all, :id,:name do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
   <%= f.button :submit %>
 <% end%>
 

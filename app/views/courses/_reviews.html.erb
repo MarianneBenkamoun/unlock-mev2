@@ -1,0 +1,29 @@
+<div class="col-xs-8 col-xs-offset-2 col-lg-6 col-lg-offset-3 ">
+
+  <%= simple_form_for [@course, @review] do |f| %>
+
+  <div class="input-group", id="seereview">
+    <%= f.input :description, placeholder: 'ecrivez une description',label:false, class: "form-control"  %>
+
+
+  </div>
+</br>
+<div class="input-group">
+
+  <%= f.input :price, placeholder: 'add your price', label:false,class: "form-control select"  %>
+  <span class="input-group-addon addon2"><i class=""></i></span>
+
+</div>
+</br>
+
+<div class="row">
+
+  <div class="col-xs-8 col-xs-offset-2 col-lg-4 col-lg-offset-4">
+    <%= f.submit "add a review", class: "btn btn-lg" %>
+  </div>
+</div>
+
+
+<% end %>
+<br>
+</div>

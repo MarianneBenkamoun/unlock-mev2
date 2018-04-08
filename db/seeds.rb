@@ -160,3 +160,21 @@ Clef_compliquee = Service.create(
   parent_id:19,
   picture: Rails.root.join("app/javascript/images/complicated_key.jpg").open
   )
+
+
+Vachette = Maisonmere.create(
+  name: "Vachette"
+  )
+
+Picard = Maisonmere.create(
+  name: "Picard"
+  )
+
+Bricard = Maisonmere.create(
+  name: "Bricard"
+  )
+
+Fichet = Maisonmere.create(
+  name: "Fichet"
+  )
+

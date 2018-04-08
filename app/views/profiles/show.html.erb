@@ -20,7 +20,12 @@ Bienvenue, <%= @profile.first_name.capitalize %> !
             Téléphone:
             <%= @profile.phone_number %>
           </li>
+          <li>  Maison-mere :
+            <%@profile.maisonmeres.each do |maisonmere| %>
+              <%= maisonmere.name %>
+            <% end%>
+          </li>
+
 
           <%= link_to "Edit", edit_profile_path(@profile), class: "btn btn-warning" %>
-
 
