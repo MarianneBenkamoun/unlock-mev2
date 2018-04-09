@@ -12,7 +12,6 @@ window.jQuery = $;
 window.$ = $;
 
 require.context("images", true);
-import "path to application.css";
 
 
 import 'bootstrap';
