@@ -8,6 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
+ruby '2.3.4'
 gem 'devise'
 
 # Use postgresql as the database for Active Record
@@ -52,14 +53,12 @@ gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 gem "gmaps4rails"
 gem 'omniauth-facebook'
-gem "geocoder"
 gem 'google_directions', '~> 0.1.6.2'
 gem 'activeadmin', github: 'activeadmin'
 gem 'pundit'
 gem 'money-rails'
 gem 'stripe'
 gem 'simple_form'
-gem 'webpacker'
 gem 'pry-byebug'
 gem 'pry-rails'
 
