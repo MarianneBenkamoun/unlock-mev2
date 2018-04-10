@@ -12,10 +12,10 @@
     "postcss": "^6.0.20",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
-    "synp": "^1.2.1"
+    "synp": "^1.2.1",
+    "css-loader": "^0.28.11"
   },
   "devDependencies": {
-    "css-loader": "^0.28.11",
     "postcss-loader": "^2.1.2",
     "webpack-dev-server": "^3.1.1"
   }
