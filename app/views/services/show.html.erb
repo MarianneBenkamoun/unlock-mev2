@@ -1,5 +1,12 @@
-<div class="container">
-  <div class="row" id="services-container">
+<div class="container" id="services-container">
+
+  <div class="row title-services">
+    <div class="col text-center">
+      <h3>Quelle est votre demande ?</h3>
+    </div>
+  </div>
+
+  <div class="row" id="services-cards">
     <% @service.childrens.each_with_index do |children,i| %>
 
         <div class="card text-center" style="background-image: url(<%=children.picture%>);">

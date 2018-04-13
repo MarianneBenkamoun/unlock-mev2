@@ -16,7 +16,7 @@ Ouverture_porte = Service.create(
 )
 
 #2#SUBSERVICE 1
-Porte_claqueee = Service.create(name:"Porte claquee",
+Porte_claqueee = Service.create(name:"Porte claquée",
   parent_id: 1, description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
   price:1000,
   picture: Rails.root.join("app/javascript/images/porte_simple.png").open,
@@ -24,7 +24,7 @@ Porte_claqueee = Service.create(name:"Porte claquee",
 
 
 #3#SUBSUBSERVICES
-Porte_blindee_porte_claquee= Service.create(name:"Porte blindee",parent_id: 2, description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
+Porte_blindee_porte_claquee= Service.create(name:"Porte blindée",parent_id: 2, description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
  price:500,
  picture: Rails.root.join("app/javascript/images/strong_door.jpg").open)
 
@@ -39,13 +39,13 @@ Porte_simple_porte_claquee= Service.create(name:"Porte simple",parent_id: 2, des
 
 
 #5#SUBSERVICE 2
-Porte_fermee= Service.create(name:"Porte fermee a clef",parent_id: 1, description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
+Porte_fermee= Service.create(name:"Porte fermée à clef",parent_id: 1, description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
  price:500,
  picture: Rails.root.join("app/javascript/images/locked_door.png").open)
 
 #SUBSUBSERVICES
 #6
-Porte_blindee_porte_fermee= Service.create(name:"Porte blindee",parent_id: 5, description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
+Porte_blindee_porte_fermee= Service.create(name:"Porte blindée",parent_id: 5, description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
  price:500,
  picture: Rails.root.join("app/javascript/images/strong_door.jpg").open)
 #7
@@ -67,12 +67,12 @@ Travaux_serrure = Service.create(
 #9
 Serrure_securite= Service.create(name:"Serrure de securité",parent_id: 8, description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
   price:900,
-   picture: Rails.root.join("app/javascript/images/strong_lock.jpg").open)
+   picture: Rails.root.join("app/javascript/images/strong_lock.png").open)
 #10
 #SUBSERVICE 4
 Serrure_connectee= Service.create(name:"Serrure connectée",parent_id: 8, description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
  price:400,
- picture: Rails.root.join("app/javascript/images/connected_lock.jpg").open)
+ picture: Rails.root.join("app/javascript/images/connected_key.png").open)
 #11
 #SERVICE 3
 Travaux_porte = Service.create(
@@ -87,7 +87,7 @@ Travaux_porte = Service.create(
 Pose_Corniere = Service.create(name:"Pose de cornière anti-effraction", description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
  price:400,
  parent_id: 11,
- picture: Rails.root.join("app/javascript/images/cornieres.jpg").open)
+ picture: Rails.root.join("app/javascript/images/cornieres.png").open)
 
 
 #13
@@ -95,7 +95,7 @@ Pose_Corniere = Service.create(name:"Pose de cornière anti-effraction", descrip
 Pose_porte_blindee= Service.create(name:"Installation de porte blindée", description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
  price:500,
  parent_id: 11,
- picture: Rails.root.join("app/javascript/images/travaux_strong_door.jpg").open)
+ picture: Rails.root.join("app/javascript/images/travaux_strong_door.png").open)
 
 
 #14
@@ -151,12 +151,12 @@ Clef_simple = Service.create(
   name: "Clef simple",
   description: "",
   parent_id:19,
-  picture: Rails.root.join("app/javascript/images/simple_key.jpg").open
+  picture: Rails.root.join("app/javascript/images/simple_key.png").open
   )
 #21
 Clef_compliquee = Service.create(
   name: "Clef compliquée",
   description: "",
   parent_id:19,
-  picture: Rails.root.join("app/javascript/images/complicated_key.jpg").open
+  picture: Rails.root.join("app/javascript/images/complicated_key.png").open
   )
