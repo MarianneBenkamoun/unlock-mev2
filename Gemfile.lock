@@ -193,6 +193,8 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     netrc (0.11.0)
+    nexmo (5.0.1)
+      jwt
     nio4r (2.3.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
@@ -370,6 +372,7 @@ DEPENDENCIES
   material_design_icons
   momentjs-rails (>= 2.9.0)
   money-rails
+  nexmo
   omniauth-facebook
   pg (>= 0.18, < 2.0)
   pry-byebug
@@ -390,6 +393,9 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
   webpacker
+
+RUBY VERSION
+   ruby 2.3.4p301
 
 BUNDLED WITH
    1.15.4

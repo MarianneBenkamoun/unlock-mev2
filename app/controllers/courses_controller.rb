@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
 skip_before_action :redirectlocksmith
+require('nexmo');
 
 def index
     if current_user.profile_type=="locksmith" #if current_user.profile_id?
@@ -39,32 +40,32 @@ def index
     end
   end
 
-  def show
-      @course = Course.find(params[:id])
-if params[:locksmith]
-        if @course.status == "paid"
-        @course.locksmith = Locksmith.find(params[:locksmith])
-        @course.save
-        @customer=@course.customer
-
-        else
-        @review= Review.new
-        @customer=Profile.find(@course.customer_id)
-        if Review.where(course_id:@course.id).size == 1
-
-          SetlocksmithJob.set(wait: 5.minute).perform_later(@course.id)
-        end
-
-
-        end
-
-
-
-
-
-        end
-
+def show
+  @course = Course.find(params[:id])
+  if params[:locksmith]
+    if @course.status == "paid"
+      @course.locksmith_id = Profile.find_by(user_id:current_user.id).id
+      @locksmith=Profile.find(@course.locksmith_id )
+      @course.save
+      @customer=Profile.find(@course.customer_id)
+       client = Nexmo::Client.new(
+        api_key: 'a572bb4c',
+        api_secret: 'bc3c2b33e05f3d3b'
+        )
+         client.sms.send(
+         from: 'Unlockme',
+         to: @customer.phone_number.gsub(/^0/,'33').to_i,
+        text: 'your order was validated ! your locksmith is'+@locksmith.name
+         )
+    else
+      @review= Review.new
+      @customer=Profile.find(@course.customer_id)
+      if Review.where(course_id:@course.id).size == 1
+        SetlocksmithJob.set(wait: 5.minute).perform_later(@course.id)
+      end
+    end
   end
+end
 
   def edit
     @course = Course.find(params[:id])

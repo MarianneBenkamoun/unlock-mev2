@@ -26,6 +26,7 @@ gem 'webpacker'
 gem 'figaro'
 gem 'cloudinary'
 gem "geocoder"
+gem 'nexmo'
 
 
 # Use CoffeeScript for .coffee assets and views
