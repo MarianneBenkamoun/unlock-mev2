@@ -3,22 +3,40 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
   <%= f.error_notification %>
-  <%= f.fields_for @profile do |ff| %>
+  <%= f.fields_for :profile_attributes do |ff| %>
 
     <%= ff.input :first_name, placeholder: "Prénom", label: false %>
     <%= ff.input :last_name, placeholder: "Nom de famille", label: false %>
     <%= ff.input :phone_number, placeholder: "Numero de telephone", label: false %>
-    <%= ff.hidden_field :profile_type, value: "customer" %>
-    <%= ff.hidden_field :status, value: true %>
+    <% if params[:professionel]%>
+          <div class="field">
+  <%= ff.label "Maisons meres" %><br />
+  <%= ff.collection_check_boxes :maisonmere_ids, Maisonmere.all, :id,:name do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
+</div>
+    <% end%>
+
+
     </div>
   <% end%>
 
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+       <% if params[:customer]%>
+      <%= f.hidden_field :profile_type, value: "customer" %>
+      <%= f.hidden_field :status, value: true %>
+      <%= hidden_field_tag 'course', @course.id %>
 
-    <%= f.hidden_field :profile_type, value: "customer" %>
-    <%= hidden_field_tag 'course', @course.id %>
+    <% elsif params[:professionel]%>
+      <%= f.hidden_field :profile_type, value: "locksmith" %>
+      <%= f.hidden_field :status, value: false %>
+    <% end%>
+
     <%= f.input :password_confirmation, required: true %>
   </div>
   <div class="form-actions">

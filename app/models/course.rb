@@ -10,6 +10,7 @@ class Course < ApplicationRecord
 
   has_one :locksmith, :class_name => "Profile"
   has_one :customer, :class_name => "Profile"
+
   belongs_to :service
   has_many :sites, dependent: :destroy
   accepts_nested_attributes_for :sites, reject_if: :all_blank, allow_destroy: true

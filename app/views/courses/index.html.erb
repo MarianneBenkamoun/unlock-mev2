@@ -1,0 +1,37 @@
+<h2 class="text-center">Courses en attente</h2>
+
+<div class="course-wrapper-course">
+  <!-- <h2 class='course-item-section'>Course en attente</h2> -->
+  <div class="course-item-container">
+    <div class="course-item">
+      <% @courses.each_with_index do |course, i| %>
+      <div id="<%=i%>" class="choice"> </div>
+
+      <div class="course-distance">WW
+        <div class="course-distance-item">
+          <i class='mdi mdi-clock-fast'></i> <%= course.hourtext%> <%= course.datetext %>
+        </div>
+      </div>
+      <div class="course-pickup">
+        <i class='mdi mdi-flag-outline'></i> <%= course.sites.select { |site| site.type_of == "pick_up" }.first.address %>
+      </div>
+
+      <div class="course-action">
+        <div class="course-price">
+          <%= humanized_money_with_symbol(course.price) %>
+        </div>
+        <div class="course-action-item">
+        </div>
+      </div>
+      <div class='bg-blue margin-top--2'>En acceptant la course, vous acceptez les conditions générales de unlockme.</div>
+      <div class ="button-choice">
+        <button class="btn btn-danger btn-accept refuse" data="<%=i %>"type="button">Refuser </button>
+        <%= link_to 'Accepter', course_path(course,locksmith:@locksmith), class: 'btn btn-success btn-accept' %>
+      </div>
+      </div>
+      <%end%>
+    </div>
+  </div>
+</div>
+
+

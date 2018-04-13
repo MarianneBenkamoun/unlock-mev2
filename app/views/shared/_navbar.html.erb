@@ -10,22 +10,11 @@
       <!-- utilisateur enregistré & professionnel -->
       <li>
         <% if user_signed_in? %>
-          <% if current_user.profile_type=="locksmith"%>
-            <%= link_to locksmith_path(Locksmith.find_by(user_id:current_user.id)) do %>
-            <li>
-              <i class="fa fa-user"></i>
-              <%= t ".profile", default: "Profile" %>
-            </li>
-          <% end %>
-        </li>
-        <!-- utilisateur enregistré & client -->
-      <% else %>
         <%= link_to current_profile_path(Profile.find_by(user_id:current_user.id)) do %>
         <li>
           <i class="fa fa-user"></i>
           <%= t ".profile", default: "Profile" %>
         </li>
-      <% end %>
     <% end %>
     <li>
       <%= link_to root_path do %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313132813) do
+ActiveRecord::Schema.define(version: 20180405100030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,21 +41,34 @@ ActiveRecord::Schema.define(version: 20180313132813) do
     t.string "photodoor"
     t.string "photoserrure"
     t.string "estimate"
-    t.bigint "profile_id"
+    t.bigint "customer_id"
+    t.bigint "locksmith_id"
     t.bigint "service_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["profile_id"], name: "index_courses_on_profile_id"
+    t.index ["customer_id"], name: "index_courses_on_customer_id"
+    t.index ["locksmith_id"], name: "index_courses_on_locksmith_id"
     t.index ["service_id"], name: "index_courses_on_service_id"
   end
 
   create_table "entreprises", force: :cascade do |t|
-    t.string "maisonmere"
-    t.string "entreprise"
-    t.bigint "profile_id"
+    t.string "name"
+    t.bigint "maisonmere_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["profile_id"], name: "index_entreprises_on_profile_id"
+    t.index ["maisonmere_id"], name: "index_entreprises_on_maisonmere_id"
+  end
+
+  create_table "maisonmeres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "maisonmeres_profiles", id: false, force: :cascade do |t|
+    t.bigint "maisonmere_id", null: false
+    t.bigint "profile_id", null: false
+    t.index ["maisonmere_id", "profile_id"], name: "index_maisonmeres_profiles_on_maisonmere_id_and_profile_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -66,8 +79,10 @@ ActiveRecord::Schema.define(version: 20180313132813) do
     t.string "first_name"
     t.string "profile_type"
     t.bigint "user_id"
+    t.bigint "entreprise_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["entreprise_id"], name: "index_profiles_on_entreprise_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -127,9 +142,9 @@ ActiveRecord::Schema.define(version: 20180313132813) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "courses", "profiles"
   add_foreign_key "courses", "services"
-  add_foreign_key "entreprises", "profiles"
+  add_foreign_key "entreprises", "maisonmeres"
+  add_foreign_key "profiles", "entreprises"
   add_foreign_key "profiles", "users"
   add_foreign_key "reviews", "courses"
   add_foreign_key "reviews", "profiles"

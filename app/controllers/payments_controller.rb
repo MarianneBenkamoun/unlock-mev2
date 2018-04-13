@@ -2,6 +2,11 @@ class PaymentsController < ApplicationController
   before_action :set_course
 
   def new
+    @course =Course.find(params[:course_id])
+    @course.customer_id = current_user.profile.id
+    unless @course.save
+      binding.pry
+    end
   end
 
  def create
@@ -37,6 +42,7 @@ class PaymentsController < ApplicationController
 private
 
   def set_course
-    @course = Course.where(status: 'pending').find(params[:course_id])
+    # @course = Course.where(status: 'pending').find(params[:course_id])
+    @course = Course.find(params[:course_id])
   end
 end

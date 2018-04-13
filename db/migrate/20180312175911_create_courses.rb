@@ -14,7 +14,10 @@ class CreateCourses < ActiveRecord::Migration[5.1]
       t.string :photoserrure
       t.string :estimate
       t.monetize :price, currency: { present: false }
-      t.references :profile, foreign_key: true
+      t.references :customer, index: true
+      t.references :locksmith, index: true
+
+
       t.references :service, foreign_key: true
       t.timestamps
     end

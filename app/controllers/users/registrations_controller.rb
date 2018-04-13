@@ -2,23 +2,34 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_sign_up_params, only: [:create]
+
+
+  before_action :configure_sign_up_params, only: [:new,:create]
+      skip_before_action :redirectlocksmith
+
+
+
+
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   def new
-   @user=User.new
+   @user=User.new(sign_up_params)
    @profile = @user.build_profile
-   @course=Course.find(params[:course])
     if params[:customer]
       @user.profile_type = "customer"
+      @course=Course.find(params[:course])
     end
     super
   end
 
   # POST /resource
   # def create
-  #   super
+  #   @user=User.new(sign_up_params)
+  #   @user.save
+  #   # @profile = @user.build_profile(params[:user][:profile])
+
+  # super
   # end
 
   # GET /resource/edit
@@ -49,12 +60,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:profile_type, :profile,profile_attributes:  [ :first_name, :last_name,:phone_number, :status]])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [ :status,:profile,:profile_type, profile_attributes:  [ :id, :first_name, :last_name,:phone_number, maisonmere_ids: []]])
   end
 
-  # If you have extra params to permit, append them to the sanitizer.
+  # If you have extra params to permit, append them to the sanitizer.,
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:profile_type,:profile,profile_attributes: [ :first_name, :last_name,:phone_number, :status]])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:profile_type,:profile,profile_attributes: [ :first_name, :last_name,:phone_number,:maisonmere_ids, :status ]])
   end
 
   # The path used after sign up.
@@ -70,8 +81,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
    def after_sign_up_path_for(resource)
+    if params[:course]
      @course=Course.find(params[:course])
      new_course_payment_path(@course)
+    else
+      root_path
+    end
 
 
     # if params[:locksmith]
@@ -88,7 +103,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
 
-
-
-
+private
+ # def user_params
+ #    params.require(:user).permit(:status,:profile_type, :profiles, profile_attributes:  [ :id, :first_name, :last_name,:phone_number, maisonmere_ids: []])
+ #  end
 end

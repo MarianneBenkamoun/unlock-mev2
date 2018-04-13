@@ -4,9 +4,13 @@
     <%= ff.hidden_field :type_of, value: "pick_up" %>
   <% end%>
   <%= hidden_field_tag 'service_id', @service.id %>
-  <%= f.hidden_field :status, value: "pending" %>
-  <%= f.hidden_field :course, value: @course.id %>
-  <div onclick="myFunction();showFilterItem();" class="btn btn-warning">
+  <% if @service.id == 3 || @service.id == 4 || @service.id == 6 || @service.id == 7%>
+    <%= f.hidden_field :status, value: "pending" %>
+  <% else %>
+    <%= f.hidden_field :status, value: "attentedevis" %>
+  <% end %>
+<!--    <%= hidden_field_tag 'courseid', @course.id %>
+ -->  <div onclick="myFunction();showFilterItem();" class="btn btn-warning">
     Choix d'une autre date
   </div>
   <div id="mydiv" class="mystyle">
@@ -26,7 +30,7 @@
     <label class="btn btn-primary">
       Photo de votre serrure !
       <span style="display:none;">
-        <%= f.input :photoserrure, input_html: { id: "photodoor"}, label:false %>
+        <%= f.input :photoserrure, input_html: { id: "photoserrure"}, label:false %>
       </span>
     </label>
   <%= f.input :photodoor_cache, as: :hidden %>

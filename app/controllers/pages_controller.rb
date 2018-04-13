@@ -1,4 +1,8 @@
 class PagesController < ApplicationController
+  skip_before_action :redirectlocksmith, only: [:landing_page]
+
+
+
   # skip_before_action :authenticate_user!, :home, :landing_page
 
   def home

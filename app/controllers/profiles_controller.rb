@@ -1,4 +1,7 @@
 class ProfilesController < ApplicationController
+
+      skip_before_action :redirectlocksmith
+
   def show
     @profile = Profile.find_by(user_id:current_user.id)
   end
@@ -31,13 +34,16 @@ class ProfilesController < ApplicationController
 
 
   def confirmation
+    if current_user.status == true
+      redirect_to courses_path
+    end
 
   end
 
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :phone_number, :status,:photo, :photo_cache)
+    params.require(:profile).permit(:first_name, :last_name, :phone_number, :status,:photo, :photo_cache, maisonmere_ids:[])
   end
 
 end
