@@ -87,7 +87,7 @@ Travaux_porte = Service.create(
 Pose_Corniere = Service.create(name:"Pose de cornière anti-effraction", description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
  price:400,
  parent_id: 11,
- picture: Rails.root.join("app/javascript/images/cornieres.jpg").open)
+ picture: Rails.root.join("app/javascript/images/cornieres.png").open)
 
 
 #13
@@ -95,7 +95,7 @@ Pose_Corniere = Service.create(name:"Pose de cornière anti-effraction", descrip
 Pose_porte_blindee= Service.create(name:"Installation de porte blindée", description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
  price:500,
  parent_id: 11,
- picture: Rails.root.join("app/javascript/images/travaux_strong_door.jpg").open)
+ picture: Rails.root.join("app/javascript/images/travaux_strong_door.png").open)
 
 
 #14
