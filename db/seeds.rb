@@ -104,7 +104,7 @@ Pose_porte_blindee= Service.create(name:"Installation de porte blindée", descri
 Installation_judas= Service.create(name:"Installation de judas", description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
  price:500,
  parent_id: 11,
- picture: Rails.root.join("app/javascript/images/judas.jpg").open
+ picture: Rails.root.join("app/javascript/images/peephole.png").open
 )
 
 
@@ -177,4 +177,3 @@ Bricard = Maisonmere.create(
 Fichet = Maisonmere.create(
   name: "Fichet"
   )
-
