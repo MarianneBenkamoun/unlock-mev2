@@ -26,7 +26,7 @@ Porte_claqueee = Service.create(name:"Porte claquée",
 #3#SUBSUBSERVICES
 Porte_blindee_porte_claquee= Service.create(name:"Porte blindée",parent_id: 2, description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
  price:500,
- picture: Rails.root.join("app/javascript/images/strong_door.jpg").open)
+ picture: Rails.root.join("app/javascript/images/strong_door.png").open)
 
 #4
 
@@ -47,7 +47,7 @@ Porte_fermee= Service.create(name:"Porte fermée à clef",parent_id: 1, descript
 #6
 Porte_blindee_porte_fermee= Service.create(name:"Porte blindée",parent_id: 5, description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
  price:500,
- picture: Rails.root.join("app/javascript/images/strong_door.jpg").open)
+ picture: Rails.root.join("app/javascript/images/strong_door.png").open)
 #7
 Porte_simple_porte_fermee= Service.create(name:"Porte simple",parent_id: 5, description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
  price:500,
@@ -95,7 +95,7 @@ Pose_Corniere = Service.create(name:"Pose de cornière anti-effraction", descrip
 Pose_porte_blindee= Service.create(name:"Installation de porte blindée", description:"Une fois votre commande validee, un serrurier vous contactera par sms. Verifiez que vos informations sont correctes.",
  price:500,
  parent_id: 11,
- picture: Rails.root.join("app/javascript/images/travaux_strong_door.png").open)
+ picture: Rails.root.join("app/javascript/images/strong_door.png").open)
 
 
 #14
