@@ -1,3 +1,12 @@
+#new-course-container {
+  min-height: 70vh;
+}
+
+.title-new-course {
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
 .mystyle {
     display:none;
 }
