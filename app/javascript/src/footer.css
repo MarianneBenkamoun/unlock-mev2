@@ -1,5 +1,4 @@
 footer .top-footer {
-  /* background: rgba(32, 54, 89, 0.6); */
   padding: 30px 100px;
 }
 footer .top-footer .logo-footer {
@@ -7,18 +6,15 @@ footer .top-footer .logo-footer {
 }
 footer .top-footer .fa-facebook-official {
   font-size: 40px;
-  /* color: #203659; */
   color: rgba(32, 54, 89, 0.8);
 }
 footer .top-footer .fa-facebook-official:hover {
-  /* color: rgba(32, 54, 89, 0.8); */
   color: rgba(32, 54, 89, 0.6);
 }
 footer .bottom-footer {
   padding: 10px 0;
   color: white;
   font-size: 10px;
-  /* background: rgba(32, 54, 89, 0.8); */
   background: rgba(32, 54, 89, 0.6);
 }
 footer .bottom-footer a {

@@ -1,3 +1,11 @@
+<div class="container" id="new-course-container">
+
+  <div class="row title-new-course">
+    <div class="col text-center">
+      <h3>Veuillez renseigner les informations ci-dessous:</h3>
+    </div>
+  </div>
+
 <%= simple_form_for @course do |f| %>
   <%= f.fields_for :sites do |ff| %>
     <%= ff.input :address, placeholder: "Adresse de prise en charge", label: false, input_html: { class: "form-control is-valid"} %>
@@ -22,13 +30,13 @@
   </br>
   </br>
     <label class="btn btn-primary">
-      Photo de votre porte !
+      Photo de votre porte
       <span style="display:none;">
         <%= f.input :photodoor, input_html: { id: "photodoor"}, label:false %>
       </span>
     </label>
     <label class="btn btn-primary">
-      Photo de votre serrure !
+      Photo de votre serrure 
       <span style="display:none;">
         <%= f.input :photoserrure, input_html: { id: "photoserrure"}, label:false %>
       </span>
@@ -38,7 +46,7 @@
   <%= f.button :submit,"Devis", id:"", class:'btn-primary' %>
 <% end %>
 
-
+</div>
 
 <%= content_for :after_js do%>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBciWZJhE5vRLjrsloTnOw7y7z4CiJIARA&libraries=places"></script>
