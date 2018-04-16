@@ -146,27 +146,27 @@ body {
 }
 
 #main #sections .container-box .box-1 {
-  background: url("../images/ouverture1.png") no-repeat;
+  background: url("../images/ouverture.png") no-repeat;
   background-size: cover;
 }
 
 #main #sections .container-box .box-2 {
-  background: url("../images/pose_serrure1.png") no-repeat;
+  background: url("../images/pose_serrure.png") no-repeat;
   background-size: cover;
 }
 
 #main #sections .container-box .box-3 {
-  background: url("../images/travaux_porte1.png") no-repeat;
+  background: url("../images/travaux_porte.png") no-repeat;
   background-size: cover;
 }
 
 #main #sections .container-box .box-4 {
-  background: url("../images/double_clef1.png") no-repeat;
+  background: url("../images/double_clef.png") no-repeat;
   background-size: cover;
 }
 
 #main #sections .container-box .box-5 {
-  background: url("../images/coffre1_moyen.png") no-repeat;
+  background: url("../images/coffre_moyen.png") no-repeat;
   background-size: cover;
 }
 
